@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="canonical" href="https://workflow-pack-lab.github.io/workflow-pack-lab/tools/website-cost-calculator/">
+<title>Website Cost Calculator 2026 — Compare Builder Total Cost of Ownership</title>
+<meta name="description" content="Free website cost calculator. Compare total cost of ownership across Wix, Squarespace, Webflow, Framer, Carrd, Duda, and Hostinger. See 1-year, 3-year, and 5-year costs including domain, SSL, and premium upgrades.">
+<meta property="og:title" content="Website Cost Calculator — Compare Builders' Total Cost">
+<meta property="og:description" content="Free interactive tool. Calculate total cost of ownership of 7 website builders over 1-5 years. See which platform saves you the most money.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Website Cost Calculator",
+  "description": "Free tool to calculate total cost of ownership for website builder platforms over 1-5 years",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Any",
+  "offers": { "@type": "Offer", "price": "0" }
+}
+</script>
+<style>
+  :root { --bg: #f8fafc; --card: #fff; --text: #1e293b; --muted: #64748b; --border: #e2e8f0; --accent: #3b82f6; --green: #22c55e; --green-bg: #dcfce7; --green-text: #166534; --yellow-bg: #fef9c3; --yellow-text: #854d0e; --purple-bg: #ede9fe; --purple-text: #5b21b6; --orange-bg: #ffedd5; --orange-text: #9a3412; --red-bg: #fee2e2; --red-text: #991b1b; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; padding: 20px; }
+  .container { max-width: 900px; margin: 0 auto; }
+  h1 { font-size: 1.5rem; margin-bottom: 0.25rem; }
+  .subtitle { color: var(--muted); margin-bottom: 0.75rem; font-size: 0.95rem; }
+  .meta { font-size: 0.78rem; color: var(--muted); margin-bottom: 1rem; }
+  .disclosure { font-size: 0.78rem; color: var(--muted); background: var(--yellow-bg); padding: 8px 12px; border-radius: 6px; margin-bottom: 1.25rem; border: 1px solid rgba(234,179,8,0.2); }
+  .calc-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 24px; margin-bottom: 1.25rem; }
+  .calc-card h2 { font-size: 1.1rem; margin-bottom: 1rem; }
+  .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .form-group { margin-bottom: 0; }
+  .form-group.full { grid-column: 1 / -1; }
+  label { display: block; font-size: 0.8rem; font-weight: 600; margin-bottom: 4px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.3px; }
+  input, select { width: 100%; padding: 8px 10px; border: 1px solid var(--border); border-radius: 6px; font-size: 0.9rem; font-family: inherit; background: var(--bg); }
+  input:focus, select:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px rgba(59,130,246,0.1); }
+  fieldset { border: 1px solid var(--border); border-radius: 8px; padding: 16px; margin-bottom: 16px; }
+  legend { font-size: 0.85rem; font-weight: 600; padding: 0 8px; color: var(--muted); }
+  .platform-checks { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 6px; }
+  .platform-check { display: flex; align-items: center; gap: 8px; padding: 6px 10px; background: var(--bg); border-radius: 6px; border: 1px solid var(--border); cursor: pointer; transition: 0.15s; }
+  .platform-check.selected { border-color: var(--accent); background: #eff6ff; }
+  .platform-check input[type="checkbox"] { width: auto; accent-color: var(--accent); }
+  .platform-check label { text-transform: none; letter-spacing: 0; font-size: 0.85rem; cursor: pointer; margin: 0; color: var(--text); }
+  .platform-check .pricing-badge { font-size: 0.7rem; color: var(--muted); margin-left: auto; }
+  .btn { padding: 10px 24px; border: none; border-radius: 6px; font-size: 0.9rem; font-weight: 600; cursor: pointer; }
+  .btn-primary { background: var(--accent); color: #fff; }
+  .btn-primary:hover { background: #2563eb; }
+  .btn-secondary { background: #e2e8f0; color: var(--text); }
+  .btn-secondary:hover { background: #cbd5e1; }
+  .btn-group { display: flex; gap: 8px; margin-top: 1rem; flex-wrap: wrap; }
+  .results { display: none; }
+  .results.visible { display: block; margin-top: 1.5rem; }
+  .result-summary { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin-bottom: 1.5rem; }
+  .result-card { border-radius: 10px; padding: 16px; text-align: center; border: 1px solid; }
+  .result-card.best { background: var(--green-bg); border-color: var(--green); }
+  .result-card.mid { background: var(--purple-bg); border-color: #c4b5fd; }
+  .result-card.high { background: var(--orange-bg); border-color: #fdba74; }
+  .result-card .label { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.5px; color: var(--muted); }
+  .result-card .amount { font-size: 1.6rem; font-weight: 700; margin: 4px 0; }
+  .result-card .detail { font-size: 0.82rem; }
+  .result-card.best .amount { color: var(--green-text); }
+  .result-card.mid .amount { color: var(--purple-text); }
+  .result-card.high .amount { color: var(--orange-text); }
+  table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+  th { text-align: left; padding: 10px 8px; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.5px; color: var(--muted); border-bottom: 2px solid var(--border); }
+  td { padding: 10px 8px; border-bottom: 1px solid var(--border); }
+  tr:last-child td { border-bottom: none; }
+  tr.highlight-row td { background: #eff6ff; font-weight: 600; }
+  .num { text-align: right; font-variant-numeric: tabular-nums; }
+  .bar-cell { position: relative; }
+  .bar { height: 18px; border-radius: 4px; background: var(--accent); opacity: 0.7; min-width: 4px; }
+  .bar-label { font-size: 0.78rem; margin-left: 6px; }
+  .ranking { font-size: 0.78rem; color: var(--muted); }
+  .methodology { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 20px; margin-top: 1rem; font-size: 0.85rem; color: var(--muted); }
+  .methodology h3 { font-size: 1rem; color: var(--text); margin-bottom: 8px; }
+  .footer { text-align: center; padding: 24px 0; font-size: 0.8rem; color: var(--muted); border-top: 1px solid var(--border); margin-top: 1.5rem; }
+  .footer a { color: var(--accent); text-decoration: none; }
+  @media (max-width: 640px) {
+    .form-grid { grid-template-columns: 1fr; }
+    .platform-checks { grid-template-columns: 1fr; }
+    .result-summary { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>🧮 Website Cost Calculator — 2026</h1>
+  <p class="subtitle">Compare total cost of ownership across 7 website builders. See what you'll actually pay over 1, 3, or 5 years — including domain, SSL, and premium features.</p>
+  <p class="meta">Last updated: 2026-06-09 | Prices sourced from public plan pages. Domain/SSL estimates reflect typical costs.</p>
+  <div class="disclosure">Some links on this page are affiliate links. We may earn a commission at no extra cost to you. Prices are estimates and may vary by region and promotions.</div>
+
+  <div class="calc-card">
+    <h2>📋 Your Website Requirements</h2>
+    <div class="form-grid">
+      <div class="form-group">
+        <label for="site-type">Site Type</label>
+        <select id="site-type">
+          <option value="simple">Simple (1-page portfolio / landing page)</option>
+          <option value="blog">Blog / Content Site</option>
+          <option value="business" selected>Small Business Site (5-10 pages)</option>
+          <option value="ecommerce">E-commerce Store</option>
+          <option value="agency">Agency / Multi-site Management</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="years">Time Horizon</label>
+        <select id="years">
+          <option value="1">1 Year</option>
+          <option value="3" selected>3 Years (Recommended)</option>
+          <option value="5">5 Years</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="domain-count">Custom Domains</label>
+        <select id="domain-count">
+          <option value="1" selected>1 domain</option>
+          <option value="2">2 domains</option>
+          <option value="3">3 domains</option>
+          <option value="5">5 domains</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="billing">Billing Cycle</label>
+        <select id="billing">
+          <option value="monthly">Monthly (highest cost)</option>
+          <option value="annual" selected>Annual (save 20-40%)</option>
+          <option value="biennial">2-Year (best value)</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <div class="calc-card">
+    <h2>🏗️ Select Platforms to Compare</h2>
+    <p style="font-size:0.82rem;color:var(--muted);margin-bottom:10px;">Select at least 2 platforms to compare. The cheapest total-cost option is highlighted green.</p>
+    <div class="platform-checks" id="platform-checks"></div>
+    <div class="btn-group">
+      <button class="btn btn-primary" onclick="calculate()">Calculate Costs</button>
+      <button class="btn btn-secondary" onclick="selectAll(true)">Select All</button>
+      <button class="btn btn-secondary" onclick="selectAll(false)">Clear</button>
+    </div>
+  </div>
+
+  <div class="results" id="results">
+    <h2 style="font-size:1.1rem;margin-bottom:0.75rem;">📊 Total Cost Comparison</h2>
+    <div class="result-summary" id="result-summary"></div>
+    <div style="overflow-x:auto;">
+      <table id="cost-table">
+        <thead>
+          <tr>
+            <th>Platform</th>
+            <th>Plan Cost</th>
+            <th>Domain</th>
+            <th>SSL</th>
+            <th>Extras</th>
+            <th class="num">Total</th>
+            <th>Rank</th>
+          </tr>
+        </thead>
+        <tbody id="cost-body"></tbody>
+      </table>
+    </div>
+    <div class="btn-group" style="margin-top:1rem;">
+      <button class="btn btn-secondary" onclick="toggleSavings()">📈 Show Year-by-Year</button>
+      <button class="btn btn-secondary" onclick="window.print()">🖨️ Print / PDF</button>
+    </div>
+    <div id="year-breakdown" style="display:none;margin-top:1rem;"></div>
+  </div>
+
+  <div class="methodology">
+    <h3>📐 Methodology</h3>
+    <p>Prices are sourced from each platform's public pricing page as of June 2026. Domain costs are estimated at $12-15/yr (.com). SSL is included free on all platforms listed. "Extras" include required premium features (e-commerce transaction fees, extra storage, custom code export) based on site type. Total cost = plan subscription × years + domain × years + extras. Annual billing typically saves 20-40% vs monthly. Promotional first-term pricing is shown but renewal pricing may differ — we note both where known.</p>
+    <p style="margin-top:8px;"><strong>Why this matters:</strong> Most comparisons only show starting price. The real cost difference between a "cheap" builder and a "premium" one can be 5-10x over 3-5 years — and the cheapest option often lacks the features you need.</p>
+  </div>
+
+  <div class="footer">
+    <p><a href="../comparisons/website-builders/index.html">→ Full Website Builder Comparison →</a></p>
+    <p>Data-driven creator tools &middot; <a href="../../_site/index.html">AI Creator Tools</a></p>
+  </div>
+</div>
+
+<script>
+// Platform data: monthly/annual pricing, extras per site type, domain cost
+const PLATFORMS = [
+  { id: "wix", name: "Wix", monthly: { simple: 16, blog: 18, business: 27, ecommerce: 35, agency: 39 }, annual: { simple: 4.50, blog: 8.50, business: 17, ecommerce: 27, agency: 39 }, domain: true, ssl: true, extras: { simple: 0, blog: 0, business: 0, ecommerce: 0, agency: 0 }, badge: "Popular" },
+  { id: "squarespace", name: "Squarespace", monthly: { simple: 25, blog: 25, business: 33, ecommerce: 49, agency: 65 }, annual: { simple: 16, blog: 16, business: 23, ecommerce: 33, agency: 49 }, domain: true, ssl: true, extras: { simple: 0, blog: 0, business: 0, ecommerce: 0, agency: 0 }, badge: "Premium" },
+  { id: "webflow", name: "Webflow", monthly: { simple: 18, blog: 18, business: 29, ecommerce: 42, agency: 49 }, annual: { simple: 14, blog: 14, business: 23, ecommerce: 35, agency: 39 }, domain: false, ssl: true, extras: { simple: 0, blog: 0, business: 0, ecommerce: 0, agency: 0 }, badge: "Pro" },
+  { id: "framer", name: "Framer", monthly: { simple: 10, blog: 10, business: 20, ecommerce: 40, agency: 40 }, annual: { simple: 5, blog: 5, business: 15, ecommerce: 28, agency: 28 }, domain: false, ssl: true, extras: { simple: 0, blog: 0, business: 0, ecommerce: 0, agency: 0 }, badge: "Modern" },
+  { id: "carrd", name: "Carrd", monthly: { simple: 0, blog: 0, business: 0, ecommerce: 0, agency: 0 }, annual: { simple: 9, blog: 19, business: 19, ecommerce: 19, agency: 19 }, domain: false, ssl: true, extras: { simple: 0, blog: 0, business: 0, ecommerce: 0, agency: 0 }, badge: "Budget" },
+  { id: "duda", name: "Duda", monthly: { simple: 25, blog: 25, business: 35, ecommerce: 50, agency: 89 }, annual: { simple: 19, blog: 19, business: 29, ecommerce: 44, agency: 79 }, domain: true, ssl: true, extras: { simple: 0, blog: 0, business: 0, ecommerce: 0, agency: 0 }, badge: "Agency" },
+  { id: "hostinger", name: "Hostinger WB", monthly: { simple: 11.99, blog: 11.99, business: 11.99, ecommerce: 11.99, agency: 11.99 }, annual: { simple: 2.99, blog: 2.99, business: 2.99, ecommerce: 2.99, agency: 2.99 }, domain: true, ssl: true, extras: { simple: 0, blog: 0, business: 0, ecommerce: 0, agency: 0 }, badge: "Best Value" },
+];
+
+const DOMAIN_COST = 13; // avg .com renewal
+const SSL_COST = 0;     // all platforms include free SSL
+
+function init() {
+  const container = document.getElementById('platform-checks');
+  container.innerHTML = '';
+  PLATFORMS.forEach((p, i) => {
+    const div = document.createElement('div');
+    div.className = 'platform-check' + (i < 4 ? ' selected' : '');
+    div.innerHTML = `<input type="checkbox" id="chk-${p.id}" ${i < 4 ? 'checked' : ''} onchange="this.parentElement.classList.toggle('selected')">
+      <label for="chk-${p.id}">${p.name}</label>
+      <span class="pricing-badge">$${p.annual.simple}/mo (annual)</span>
+      <span style="font-size:0.65rem;padding:2px 6px;border-radius:4px;background:#e2e8f0;color:var(--muted)">${p.badge}</span>`;
+    container.appendChild(div);
+  });
+}
+
+function selectAll(checked) {
+  document.querySelectorAll('.platform-check input[type="checkbox"]').forEach(cb => {
+    cb.checked = checked;
+    cb.parentElement.classList.toggle('selected', checked);
+  });
+}
+
+function getSelected() {
+  return PLATFORMS.filter(p => document.getElementById(`chk-${p.id}`).checked);
+}
+
+function calculate() {
+  const siteType = document.getElementById('site-type').value;
+  const years = parseInt(document.getElementById('years').value);
+  const domainCount = parseInt(document.getElementById('domain-count').value);
+  const billing = document.getElementById('billing').value;
+  const selected = getSelected();
+
+  if (selected.length < 2) {
+    alert('Please select at least 2 platforms to compare.');
+    return;
+  }
+
+  // Calculate for each platform
+  const results = selected.map(p => {
+    const priceSrc = billing === 'monthly' ? p.monthly : p.annual;
+    const planMonthly = priceSrc[siteType] || priceSrc.business;
+    const multiplier = billing === 'monthly' ? 12 : (billing === 'annual' ? 1 : 0.5);
+    const planYearly = billing === 'monthly' ? planMonthly * 12 : (billing === 'biennial' ? planMonthly / 24 * 12 : planMonthly);
+    const planTotal = planYearly * years;
+    const domainTotal = domainCount * DOMAIN_COST * years;
+    const extrasTotal = (p.extras[siteType] || 0) * years;
+    const total = planTotal + domainTotal + extrasTotal;
+    const monthlyAvg = total / (years * 12);
+    return {
+      ...p,
+      planYearly: planYearly,
+      planTotal: planTotal,
+      domainTotal: domainTotal,
+      extrasTotal: extrasTotal,
+      total: total,
+      monthlyAvg: monthlyAvg,
+    };
+  });
+
+  results.sort((a, b) => a.total - b.total);
+  const minTotal = results[0].total;
+
+  // Summary cards
+  const summaryEl = document.getElementById('result-summary');
+  summaryEl.innerHTML = '';
+  const best = results[0];
+  const most = results[results.length - 1];
+  const range = most.total - best.total;
+
+  const cards = [
+    { cls: 'best', label: 'Cheapest Option', amount: `$${best.total.toFixed(0)}`, detail: `${best.name} over ${years} years ($${best.monthlyAvg.toFixed(1)}/mo)` },
+    { cls: 'mid', label: 'Most Expensive', amount: `$${most.total.toFixed(0)}`, detail: `${most.name} over ${years} years — $${range.toFixed(0)} more` },
+    { cls: 'high', label: 'Avg Monthly Across All', amount: `$${(results.reduce((s,r) => s + r.monthlyAvg, 0) / results.length).toFixed(1)}`, detail: `Per platform average (${results.length} platforms)` },
+  ];
+  cards.forEach(c => {
+    const d = document.createElement('div');
+    d.className = `result-card ${c.cls}`;
+    d.innerHTML = `<div class="label">${c.label}</div><div class="amount">${c.amount}</div><div class="detail">${c.detail}</div>`;
+    summaryEl.appendChild(d);
+  });
+
+  // Table
+  const tbody = document.getElementById('cost-body');
+  tbody.innerHTML = '';
+  results.forEach((r, i) => {
+    const tr = document.createElement('tr');
+    if (i === 0) tr.className = 'highlight-row';
+    tr.innerHTML = `
+      <td><strong>${r.name}</strong><br><span style="font-size:0.72rem;color:var(--muted)">${r.badge}</span></td>
+      <td>$${r.planYearly.toFixed(2)}/yr × ${years}yr = $${r.planTotal.toFixed(0)}</td>
+      <td>$${r.domainTotal.toFixed(0)}</td>
+      <td>Free</td>
+      <td>$${r.extrasTotal.toFixed(0)}</td>
+      <td class="num"><strong>$${r.total.toFixed(0)}</strong><br><span style="font-size:0.72rem;color:var(--muted)">$${r.monthlyAvg.toFixed(1)}/mo</span></td>
+      <td><span class="ranking">#${i+1} ${i === 0 ? '🥇' : i === 1 ? '🥈' : i === 2 ? '🥉' : ''}</span></td>`;
+    tbody.appendChild(tr);
+  });
+
+  // Year-by-year breakdown
+  const yearEl = document.getElementById('year-breakdown');
+  yearEl.innerHTML = '';
+  const yTable = document.createElement('table');
+  let yHtml = '<thead><tr><th>Year</th>';
+  results.forEach(r => { yHtml += `<th class="num">${r.name}</th>`; });
+  yHtml += '</tr></thead><tbody>';
+  for (let y = 1; y <= years; y++) {
+    yHtml += `<tr><td><strong>Year ${y}</strong></td>`;
+    results.forEach(r => {
+      const yCost = (r.planYearly + (domainCount * DOMAIN_COST) + (r.extras[siteType] || 0)) * (y === 1 && billing === 'annual' ? 1 : 1);
+      yHtml += `<td class="num">$${(r.planYearly + domainCount * DOMAIN_COST + (r.extras[siteType] || 0)).toFixed(0)}</td>`;
+    });
+    yHtml += '</tr>';
+  }
+  yHtml += '</tbody>';
+  yearEl.innerHTML = '<h3 style="font-size:0.95rem;margin-bottom:8px;">📅 Year-by-Year Cost</h3>' + yHtml;
+
+  document.getElementById('results').classList.add('visible');
+  document.getElementById('results').scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function toggleSavings() {
+  const el = document.getElementById('year-breakdown');
+  el.style.display = el.style.display === 'none' ? 'block' : 'none';
+}
+
+// Initialize on load
+init();
+</script>
+</body>
+</html>

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Is your content structured for Google AI Overviews &amp;amp; AI Mode? Score your page in 2 minutes.">
+<meta property="og:title" content="AI Search Readiness Checker — Is Your Content Ready for Google AI Over">
+<meta property="og:description" content="Is your content structured for Google AI Overviews &amp;amp; AI Mode? Score your page in 2 minutes.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://workflow-pack-lab.github.io/workflow-pack-lab/ai-search-readiness-checker/">
+<title>AI Search Readiness Checker — Is Your Content Ready for Google AI Overviews?</title>
+<style>
+  :root { --green: #22c55e; --yellow: #eab308; --red: #ef4444; --bg: #f8fafc; --card: #fff; --text: #1e293b; --muted: #64748b; --border: #e2e8f0; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; padding: 20px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 1.75rem; margin-bottom: 0.5rem; }
+  .subtitle { color: var(--muted); margin-bottom: 2rem; font-size: 0.95rem; }
+  .card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 24px; margin-bottom: 20px; }
+  label { display: flex; align-items: flex-start; gap: 12px; padding: 12px 0; cursor: pointer; border-bottom: 1px solid #f1f5f9; }
+  label:last-child { border-bottom: none; }
+  input[type="checkbox"] { margin-top: 4px; width: 18px; height: 18px; flex-shrink: 0; accent-color: #3b82f6; cursor: pointer; }
+  .criteria-text strong { display: block; font-size: 0.95rem; }
+  .criteria-text span { display: block; font-size: 0.85rem; color: var(--muted); margin-top: 2px; }
+  .score-display { display: none; text-align: center; padding: 30px 20px; margin-bottom: 20px; }
+  .score-number { font-size: 4rem; font-weight: 800; line-height: 1; }
+  .score-label { font-size: 1.2rem; font-weight: 600; margin: 8px 0 4px; }
+  .score-detail { font-size: 0.9rem; color: var(--muted); }
+  .recs { margin-top: 16px; text-align: left; }
+  .recs h3 { font-size: 1rem; margin-bottom: 8px; }
+  .recs ul { list-style: none; }
+  .recs li { padding: 6px 0; font-size: 0.9rem; }
+  .recs li::before { content: "→ "; color: var(--muted); }
+  .green { color: var(--green); } .yellow-c { color: var(--yellow); } .red-c { color: var(--red); }
+  .score-box.green-bg { background: #f0fdf4; border: 2px solid var(--green); }
+  .score-box.yellow-bg { background: #fefce8; border: 2px solid var(--yellow); }
+  .score-box.red-bg { background: #fef2f2; border: 2px solid var(--red); }
+  .btn { display: inline-block; padding: 10px 24px; border-radius: 8px; font-weight: 600; text-decoration: none; transition: 0.2s; font-size: 0.9rem; }
+  .btn-primary { background: #3b82f6; color: #fff; }
+  .btn-primary:hover { background: #2563eb; }
+  .btn-outline { border: 1px solid var(--border); color: var(--text); }
+  .btn-outline:hover { background: #f1f5f9; }
+  .ctas { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; margin-top: 16px; }
+  .footer { text-align: center; color: var(--muted); font-size: 0.8rem; margin-top: 30px; padding: 20px; border-top: 1px solid var(--border); }
+  .footer a { color: var(--muted); text-decoration: underline; }
+  .url-input { width: 100%; padding: 10px 14px; border: 1px solid var(--border); border-radius: 8px; font-size: 0.95rem; margin-bottom: 16px; }
+  .url-input:focus { outline: none; border-color: #3b82f6; box-shadow: 0 0 0 2px rgba(59,130,246,0.2); }
+  .badge { display: inline-block; padding: 2px 8px; border-radius: 99px; font-size: 0.75rem; font-weight: 600; }
+  .badge-green { background: #dcfce7; color: #166534; }
+  .badge-yellow { background: #fef9c3; color: #854d0e; }
+  .badge-red { background: #fee2e2; color: #991b1b; }
+  .progress-bar { height: 8px; border-radius: 99px; background: #e2e8f0; margin: 12px 0; overflow: hidden; }
+  .progress-fill { height: 100%; border-radius: 99px; transition: width 0.4s ease; }
+  .disclaimer { font-size: 0.8rem; color: var(--muted); margin-top: 12px; font-style: italic; }
+  @media (max-width: 600px) { body { padding: 12px; } .card { padding: 16px; } h1 { font-size: 1.4rem; } }
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "AI Search Readiness Checker — Is Your Content Ready for Google AI Over", "description": "Is your content structured for Google AI Overviews &amp; AI Mode? Score your page in 2 minutes.", "url": "https://workflow-pack-lab.github.io/workflow-pack-lab/ai-search-readiness-checker"}</script>
+</head>
+<body>
+<div class="container">
+  <h1>🔍 AI Search Readiness Checker</h1>
+  <p class="subtitle">Is your content structured for Google AI Overviews &amp; AI Mode? Score your page in 2 minutes.</p>
+
+  <div class="card">
+    <label for="url_input_label" style="border:none; padding-top:0;"><strong>Your page URL (optional — not stored)</strong></label>
+    <input type="url" class="url-input" id="pageUrl" placeholder="https://yoursite.com/your-page" oninput="updateScore()">
+  </div>
+
+  <div class="card">
+    <h3 style="margin-bottom:4px;">Checklist — check what your page does well</h3>
+    <p style="color:var(--muted); font-size:0.85rem; margin-bottom:8px;">10 criteria × 10 points each = 100 max</p>
+
+    <div id="criteria"></div>
+
+    <div class="progress-bar"><div class="progress-fill" id="progressFill" style="width:0%; background:#94a3b8;"></div></div>
+    <p style="text-align:right; font-size:0.85rem; color:var(--muted);" id="counter">0 / 10 checked</p>
+  </div>
+
+  <div class="score-display card" id="scoreDisplay">
+    <div class="score-box" id="scoreBox">
+      <div class="score-number" id="scoreNumber">0</div>
+      <div class="score-label" id="scoreLabel">—</div>
+      <div class="score-detail" id="scoreDetail">Check at least 5 criteria above</div>
+      <div class="recs" id="recsContainer"></div>
+    </div>
+  </div>
+
+  <div class="card" style="text-align:center;">
+    <h3 style="margin-bottom:8px;">Want a full audit? Get the Paid Report</h3>
+    <p style="font-size:0.9rem; color:var(--muted); margin-bottom:12px;">Prioritized fix list, schema examples, and implementation timeline.</p>
+    <div class="ctas">
+      <a href="#" class="btn btn-outline">📄 Free Checklist (PDF)</a>
+      <a href="#" class="btn btn-primary">📊 Full Audit Report — $9</a>
+    </div>
+    <p style="font-size:0.8rem; color:var(--muted); margin-top:8px;">[Affiliate links: <a href="#">Schema tools</a> · <a href="#">SEO tooling</a>]</p>
+  </div>
+
+  <div class="footer">
+    <p>Based on <a href="https://developers.google.com/search/docs/appearance/ai-features" target="_blank">Google's AI features guidance</a>. Not affiliated with Google. Results are self-assessed estimates.</p>
+    <p>Also check: <a href="#">Newsletter Platform Comparison</a> · <a href="#">Digital Seller Calculator</a></p>
+  </div>
+</div>
+
+<script>
+const criteria = [
+  { id: "intent", label: "Clear page intent", desc: "Single topic, single answer goal — no topic sprawl" },
+  { id: "answer-block", label: "Answer block at top", desc: "Direct answer visible in first 150 words, before fluff" },
+  { id: "schema", label: "Structured data present", desc: "FAQ, HowTo, or Article schema markup on page" },
+  { id: "author", label: "Author &amp; source clarity", desc: "Byline, credentials, publish date, last-updated date all visible" },
+  { id: "tables", label: "Tables or structured lists", desc: "Data points use tables or bullet lists (readable by AI)" },
+  { id: "internal-links", label: "Internal links to supporting content", desc: "Links to deeper, relevant pages within your site" },
+  { id: "freshness", label: "Content freshness", desc: "Updated within the last 12 months (visible date stamp)" },
+  { id: "disclosure", label: "Affiliate disclosure visible", desc: "Clear disclosure present and above the fold (not hidden)" },
+  { id: "mobile", label: "Mobile-friendly / fast load", desc: "Readable on mobile without pinch-zoom; passes Core Web Vitals" },
+  { id: "unique", label: "Original research or unique data", desc: "Adds unique value beyond rewrites — original data, analysis, or experience" }
+];
+
+const recsByScore = {
+  low: [
+    "Start by narrowing each page to ONE clear question it answers.",
+    "Add a 2-3 sentence answer block at the top — before any intro fluff.",
+    "Implement FAQ or HowTo schema using Google's Structured Data tool.",
+    "Add visible author bylines and publish dates. This builds AI trust signals.",
+    "Run a mobile-friendly test (pagespeed.web.dev) and fix Core Web Vitals issues."
+  ],
+  medium: [
+    "Add FAQ/HowTo schema if missing — this is the #1 signal for AI Overview inclusion.",
+    "Convert any data sections into tables or structured lists for AI parsing.",
+    "Add internal links to 3-5 deeper, related articles on your site.",
+    "Check affiliate disclosures are above the fold, not buried in footer.",
+    "Audit content freshness — outdated pages lose AI-feature eligibility."
+  ],
+  high: [
+    "Your page is in good shape! Focus on schema completion and freshness tracking.",
+    "Add a 'Last reviewed' date stamp to demonstrate content maintenance.",
+    "Consider adding original data or research to differentiate from competitors.",
+    "Cross-link related pages to build topical authority clusters."
+  ]
+};
+
+function buildCriteria() {
+  const container = document.getElementById('criteria');
+  criteria.forEach(c => {
+    const label = document.createElement('label');
+    const checkbox = document.createElement('input');
+    checkbox.type = 'checkbox';
+    checkbox.id = c.id;
+    checkbox.onchange = updateScore;
+    const text = document.createElement('div');
+    text.className = 'criteria-text';
+    text.innerHTML = `<strong>${c.label}</strong><span>${c.desc}</span>`;
+    label.appendChild(checkbox);
+    label.appendChild(text);
+    container.appendChild(label);
+  });
+}
+
+function updateScore() {
+  const checked = document.querySelectorAll('#criteria input:checked').length;
+  const total = criteria.length;
+  const score = Math.round((checked / total) * 100);
+  document.getElementById('counter').textContent = `${checked} / ${total} checked`;
+
+  const fill = document.getElementById('progressFill');
+  fill.style.width = `${score}%`;
+
+  const display = document.getElementById('scoreDisplay');
+  const num = document.getElementById('scoreNumber');
+  const label = document.getElementById('scoreLabel');
+  const detail = document.getElementById('scoreDetail');
+  const box = document.getElementById('scoreBox');
+  const recsEl = document.getElementById('recsContainer');
+
+  display.style.display = checked >= 3 ? 'block' : 'none';
+  if (checked < 3) return;
+
+  num.textContent = score;
+  box.className = 'score-box';
+
+  if (score >= 70) {
+    box.classList.add('green-bg');
+    num.style.color = 'var(--green)';
+    label.textContent = '🟢 AI-Ready';
+    label.style.color = 'var(--green)';
+    detail.textContent = 'Your page is well-structured for AI Overviews. Minor refinements can help.';
+    recsEl.innerHTML = `<h3>Maintenance Checklist</h3><ul>${recsByScore.high.map(r => `<li>${r}</li>`).join('')}</ul>`;
+  } else if (score >= 40) {
+    box.classList.add('yellow-bg');
+    num.style.color = 'var(--yellow)';
+    label.textContent = '🟡 Needs Work';
+    label.style.color = 'var(--yellow)';
+    detail.textContent = 'Some signals present but gaps remain. Focus on missing criteria.';
+    recsEl.innerHTML = `<h3>Priority Fixes</h3><ul>${recsByScore.medium.map(r => `<li>${r}</li>`).join('')}</ul>`;
+  } else {
+    box.classList.add('red-bg');
+    num.style.color = 'var(--red)';
+    label.textContent = '🔴 At Risk';
+    label.style.color = 'var(--red)';
+    detail.textContent = 'Your page is missing key AI-readiness signals. Significant restructuring recommended.';
+    recsEl.innerHTML = `<h3>Critical Fixes</h3><ul>${recsByScore.low.map(r => `<li>${r}</li>`).join('')}</ul>`;
+  }
+}
+
+buildCriteria();
+</script>
+</body>
+</html>

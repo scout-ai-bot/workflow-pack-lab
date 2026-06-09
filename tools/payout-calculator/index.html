@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="canonical" href="https://workflow-pack-lab.github.io/workflow-pack-lab/tools/payout-calculator/">
+<title>Digital Product Payout Calculator 2026 — Compare Gumroad, Lemon Squeezy, Ko-fi & More</title>
+<meta name="description" content="Free digital product payout calculator. Compare net payouts across Gumroad, Lemon Squeezy, Ko-fi, Payhip, Stan, and Podia. See exactly how much you keep after fees on every price point.">
+<meta property="og:title" content="Digital Product Payout Calculator — Compare Platform Fees (2026)">
+<meta property="og:description" content="Free interactive tool. Compare net payouts across 6 digital product platforms. See exactly how much you keep after transaction fees, payment processing, and monthly subscriptions.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Digital Product Payout Calculator",
+  "description": "Compare net payouts across Gumroad, Lemon Squeezy, Ko-fi, Payhip, Stan, and Podia at any price point",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Any",
+  "offers": { "@type": "Offer", "price": "0" }
+}
+</script>
+<style>
+  :root { --bg: #f8fafc; --card: #fff; --text: #1e293b; --muted: #64748b; --border: #e2e8f0; --accent: #3b82f6; --green: #22c55e; --green-bg: #dcfce7; --green-text: #166534; --yellow-bg: #fef9c3; --yellow-text: #854d0e; --purple-bg: #ede9fe; --purple-text: #5b21b6; --orange-bg: #ffedd5; --orange-text: #9a3412; --red-bg: #fee2e2; --red-text: #991b1b; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; padding: 20px; }
+  .container { max-width: 900px; margin: 0 auto; }
+  h1 { font-size: 1.5rem; margin-bottom: 0.25rem; }
+  .subtitle { color: var(--muted); margin-bottom: 0.75rem; font-size: 0.95rem; }
+  .meta { font-size: 0.78rem; color: var(--muted); margin-bottom: 1rem; }
+  .calc-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 24px; margin-bottom: 1rem; }
+  label { display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 4px; color: var(--text); }
+  input[type="range"] { width: 100%; margin: 8px 0; accent-color: var(--accent); }
+  .range-row { display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+  .range-row input { flex: 1; }
+  .range-val { font-size: 1.8rem; font-weight: 700; color: var(--accent); min-width: 80px; text-align: right; }
+  .range-label { font-size: 0.85rem; color: var(--muted); }
+  .free-badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 0.7rem; font-weight: 600; background: var(--green-bg); color: var(--green-text); margin-left: 6px; }
+  .table-wrap { overflow-x: auto; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+  th, td { padding: 10px 12px; text-align: right; border-bottom: 1px solid var(--border); }
+  th { background: #f1f5f9; font-weight: 600; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.3px; color: var(--muted); text-align: right; }
+  th:first-child, td:first-child { text-align: left; }
+  tr:last-child td { border-bottom: none; }
+  tr.best { background: var(--green-bg); }
+  tr.best td { font-weight: 600; }
+  .payout-row td:last-child { font-weight: 700; color: var(--green-text); }
+  .disclosure { font-size: 0.75rem; color: var(--muted); padding: 8px; background: rgba(234,179,8,0.08); border-radius: 6px; margin-top: 16px; }
+  .cross-link { display: inline-block; margin-top: 12px; padding: 8px 18px; border-radius: 8px; background: var(--accent); color: #fff; text-decoration: none; font-size: 0.85rem; font-weight: 500; }
+  .cross-link:hover { background: #2563eb; }
+  @media (max-width: 600px) { .range-row { flex-direction: column; align-items: stretch; } .range-val { text-align: left; } }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>💰 Digital Product Payout Calculator</h1>
+  <p class="subtitle">Compare exactly how much you keep after fees on Gumroad, Lemon Squeezy, Ko-fi, Payhip, Stan, and Podia.</p>
+  <p class="meta">All fees sourced from public pricing pages as of June 2026. Always verify current rates before choosing a platform.</p>
+
+  <div class="calc-card">
+    <div class="range-row">
+      <div>
+        <label for="priceSlider">Product Price</label>
+        <div class="range-label">What do you want to charge per sale?</div>
+      </div>
+      <div class="range-val" id="priceDisplay">$15.00</div>
+    </div>
+    <input type="range" id="priceSlider" min="1" max="200" value="15" step="1">
+    <div style="display:flex;justify-content:space-between;font-size:0.75rem;color:var(--muted);">
+      <span>$1</span>
+      <span>$50</span>
+      <span>$100</span>
+      <span>$200</span>
+    </div>
+  </div>
+
+  <div class="calc-card">
+    <h2 style="font-size:1rem;margin-bottom:12px;">Net Payout per Sale</h2>
+    <div class="table-wrap">
+      <table id="payoutTable">
+        <thead>
+          <tr>
+            <th>Platform</th>
+            <th>Fee Structure</th>
+            <th>Fee per Sale</th>
+            <th>You Keep</th>
+            <th>Keep %</th>
+          </tr>
+        </thead>
+        <tbody id="tableBody"></tbody>
+      </table>
+    </div>
+    <div class="disclosure">
+      <strong>How fees work:</strong> Gumroad charges 4.9% + $0.30 per sale (no monthly fee). Lemon Squeezy charges 5% + $0.50. Ko-fi Gold ($9/mo) charges 0% transaction fees. Payhip charges 5% (free) or 2% (Plus $29/mo). Stan Pro ($25/mo) charges 0%. Podia ($39/mo) charges 0%. Calculator assumes lowest-cost plan for each platform.
+    </div>
+  </div>
+
+  <div class="calc-card">
+    <h2 style="font-size:1rem;margin-bottom:12px;">Monthly Volume Comparison</h2>
+    <p style="font-size:0.85rem;color:var(--muted);margin-bottom:12px;">See how fees add up at different sales volumes (includes monthly plan costs where applicable).</p>
+    <div class="table-wrap">
+      <table id="volumeTable">
+        <thead>
+          <tr>
+            <th>Platform</th>
+            <th>10 sales/mo</th>
+            <th>50 sales/mo</th>
+            <th>100 sales/mo</th>
+            <th>500 sales/mo</th>
+          </tr>
+        </thead>
+        <tbody id="volumeBody"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <div style="margin-top:20px;display:flex;gap:12px;flex-wrap:wrap;">
+    <a href="../digital-product-platforms/" class="cross-link">📊 Full Platform Comparison →</a>
+    <a href="../affiliate-commission-calculator/" class="cross-link" style="background:var(--green);">📈 Affiliate Commission Calculator →</a>
+  </div>
+
+  <div class="meta" style="margin-top:2rem;padding-top:1rem;border-top:1px solid var(--border);">
+    <p><strong>Data sources:</strong> Gumroad Help Center, Lemon Squeezy Docs, Ko-fi Pricing, Payhip Pricing, Stan Store Pricing, Podia Pricing. All fees verified June 2026.</p>
+    <p>This is a Phase 1 data resource — no affiliate links, no sponsored recommendations. For our complete platform comparison with affiliate program details: <a href="../digital-product-platforms/" style="color:var(--accent);">Digital Product Platforms Comparison</a>.</p>
+  </div>
+</div>
+
+<script>
+const PLATFORMS = [
+  {
+    id: "gumroad",
+    name: "Gumroad",
+    feePct: 4.9,
+    feeFlat: 0.30,
+    monthly: 0,
+    note: "Free to start",
+    detail: "4.9% + $0.30",
+    badge: "⭐ Most Popular"
+  },
+  {
+    id: "lemon-squeezy",
+    name: "Lemon Squeezy",
+    feePct: 5,
+    feeFlat: 0.50,
+    monthly: 0,
+    note: "VAT handling included",
+    detail: "5% + $0.50",
+    badge: ""
+  },
+  {
+    id: "kofi",
+    name: "Ko-fi Gold",
+    feePct: 0,
+    feeFlat: 0,
+    monthly: 9,
+    note: "No transaction fees",
+    detail: "0% + $0.00 ($9/mo)",
+    badge: "Best Value"
+  },
+  {
+    id: "payhip-free",
+    name: "Payhip (Free)",
+    feePct: 5,
+    feeFlat: 0,
+    monthly: 0,
+    note: "",
+    detail: "5% + $0.00",
+    badge: ""
+  },
+  {
+    id: "payhip-plus",
+    name: "Payhip Plus",
+    feePct: 2,
+    feeFlat: 0,
+    monthly: 29,
+    note: "Affiliate marketplace",
+    detail: "2% + $0.00 ($29/mo)",
+    badge: ""
+  },
+  {
+    id: "stan",
+    name: "Stan Pro",
+    feePct: 0,
+    feeFlat: 0,
+    monthly: 25,
+    note: "Social-first storefront",
+    detail: "0% + $0.00 ($25/mo)",
+    badge: ""
+  },
+  {
+    id: "podia",
+    name: "Podia (Mover)",
+    feePct: 0,
+    feeFlat: 0,
+    monthly: 39,
+    note: "All-in-one courses + downloads",
+    detail: "0% + $0.00 ($39/mo)",
+    badge: ""
+  }
+];
+
+const priceSlider = document.getElementById("priceSlider");
+const priceDisplay = document.getElementById("priceDisplay");
+const tableBody = document.getElementById("tableBody");
+const volumeBody = document.getElementById("volumeBody");
+
+function fmt(n) {
+  return "$" + n.toFixed(2);
+}
+
+function fmtPct(n) {
+  return n.toFixed(1) + "%";
+}
+
+function calcFee(platform, price) {
+  const pctFee = (platform.feePct / 100) * price;
+  return pctFee + platform.feeFlat;
+}
+
+function calcNet(platform, price) {
+  return price - calcFee(platform, price);
+}
+
+function render() {
+  const price = parseFloat(priceSlider.value);
+  priceDisplay.textContent = fmt(price);
+
+  // Sort by net payout descending
+  const sorted = [...PLATFORMS].sort((a, b) => calcNet(b, price) - calcNet(a, price));
+  const bestNet = calcNet(sorted[0], price);
+
+  let html = "";
+  for (const p of sorted) {
+    const fee = calcFee(p, price);
+    const net = calcNet(p, price);
+    const pct = ((net / price) * 100);
+    const isBest = Math.abs(net - bestNet) < 0.01;
+    const cls = isBest ? "best" : "";
+    html += `<tr class="${cls}">`;
+    html += `<td><strong>${p.name}</strong>${p.badge ? ' <span class="free-badge">' + p.badge + '</span>' : ''}</td>`;
+    html += `<td style="font-size:0.78rem;color:var(--muted);">${p.detail}</td>`;
+    html += `<td>${fmt(fee)}</td>`;
+    html += `<td><strong>${fmt(net)}</strong></td>`;
+    html += `<td>${fmtPct(pct)}</td>`;
+    html += `</tr>`;
+  }
+  tableBody.innerHTML = html;
+
+  // Volume comparison: 10, 50, 100, 500 sales/mo
+  const volumes = [10, 50, 100, 500];
+  let vhtml = "";
+  const vSorted = [...PLATFORMS].sort((a, b) => {
+    const netA = volumes.map(v => calcNet(a, price) * v - a.monthly).reduce((s, x) => s + x, 0);
+    const netB = volumes.map(v => calcNet(b, price) * v - b.monthly).reduce((s, x) => s + x, 0);
+    return netB - netA;
+  });
+  for (const p of vSorted) {
+    vhtml += `<tr>`;
+    vhtml += `<td><strong>${p.name}</strong></td>`;
+    for (const v of volumes) {
+      const gross = calcNet(p, price) * v;
+      const netMonthly = gross - p.monthly;
+      vhtml += `<td>${fmt(netMonthly)}</td>`;
+    }
+    vhtml += `</tr>`;
+  }
+  volumeBody.innerHTML = vhtml;
+}
+
+priceSlider.addEventListener("input", render);
+render();
+</script>
+</body>
+</html>

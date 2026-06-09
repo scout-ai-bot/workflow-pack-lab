@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:title" content="Newsletter Revenue Calculator — Estimate Your Paid Newsletter Earnings">
+<meta property="og:description" content="Free interactive calculator. Estimate monthly and annual revenue from a paid newsletter based on subscribers, conversion rate, pricing, and churn.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://workflow-pack-lab.github.io/workflow-pack-lab/tools/newsletter-revenue-calculator/">
+<title>Newsletter Revenue Calculator — Estimate Your Paid Newsletter Earnings (2026)</title>
+<meta name="description" content="Free interactive calculator. Estimate monthly and annual revenue from a paid newsletter based on subscribers, conversion rate, pricing, and churn.">
+<style>
+  :root { --bg: #f8fafc; --card: #fff; --text: #1e293b; --muted: #64748b; --border: #e2e8f0; --accent: #3b82f6; --green: #22c55e; --green-bg: #dcfce7; --green-text: #166534; --yellow-bg: #fef9c3; --yellow-text: #854d0e; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.5; padding: 20px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 1.6rem; margin-bottom: 0.25rem; }
+  .subtitle { color: var(--muted); margin-bottom: 1rem; font-size: 0.9rem; }
+  .card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 24px; margin-bottom: 16px; }
+  .card h2 { font-size: 1.1rem; margin-bottom: 16px; }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
+  label { display: block; font-size: 0.8rem; font-weight: 600; color: var(--muted); margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.5px; }
+  input[type="range"] { width: 100%; margin: 8px 0; accent-color: var(--accent); }
+  .range-value { font-size: 1.3rem; font-weight: 700; color: var(--accent); }
+  .range-label { font-size: 0.75rem; color: var(--muted); }
+  .result-box { text-align: center; padding: 16px; background: #f1f5f9; border-radius: 8px; }
+  .result-box .big { font-size: 2.2rem; font-weight: 800; color: var(--accent); }
+  .result-box .label { font-size: 0.75rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; margin-top: 2px; }
+  .result-box.green .big { color: var(--green); }
+  .result-box.warning .big { color: #eab308; }
+  .result-box .detail { font-size: 0.85rem; color: var(--muted); margin-top: 4px; }
+  .badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 0.7rem; font-weight: 600; }
+  .badge-green { background: var(--green-bg); color: var(--green-text); }
+  .badge-yellow { background: var(--yellow-bg); color: var(--yellow-text); }
+  .disclosure { font-size: 0.75rem; color: var(--muted); text-align: center; padding: 12px; font-style: italic; }
+  .footer { text-align: center; padding: 20px 0; font-size: 0.8rem; color: var(--muted); }
+  .recommend { padding: 12px 16px; background: #eff6ff; border-radius: 8px; margin-top: 12px; font-size: 0.9rem; }
+  .recommend a { color: var(--accent); text-decoration: none; font-weight: 600; }
+  .recommend a:hover { text-decoration: underline; }
+  @media (max-width: 600px) { .grid-2, .grid-3 { grid-template-columns: 1fr; } }
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Newsletter Revenue Calculator — Estimate Your Paid Newsletter Earnings", "description": "Free interactive calculator. Estimate monthly and annual revenue from a paid newsletter based on subscribers, conversion rate, pricing, and churn.", "url": "https://workflow-pack-lab.github.io/workflow-pack-lab/newsletter-revenue-calculator"}</script>
+</head>
+<body>
+<div class="container">
+
+  <h1>📬 Newsletter Revenue Calculator</h1>
+  <p class="subtitle">Estimate your monthly and annual earnings from a paid newsletter. Adjust sliders to see how subscriber count, pricing, and conversion rate affect your bottom line.</p>
+
+  <div class="card">
+    <h2>📊 Your Newsletter Parameters</h2>
+    <div class="grid-2">
+      <div>
+        <label>Total Subscribers</label>
+        <div><span class="range-value" id="total-subs-display">2,500</span></div>
+        <input type="range" id="total-subs" min="100" max="100000" value="2500" step="100">
+        <div class="range-label">100 — 100,000</div>
+      </div>
+      <div>
+        <label>Monthly Price</label>
+        <div><span class="range-value" id="price-display">$8</span></div>
+        <input type="range" id="price" min="3" max="50" value="8" step="1">
+        <div class="range-label">$3 — $50/mo</div>
+      </div>
+      <div>
+        <label>Free → Paid Conversion Rate</label>
+        <div><span class="range-value" id="conversion-display">5%</span></div>
+        <input type="range" id="conversion" min="0.5" max="20" value="5" step="0.5">
+        <div class="range-label">0.5% — 20%</div>
+      </div>
+      <div>
+        <label>Monthly Churn Rate</label>
+        <div><span class="range-value" id="churn-display">5%</span></div>
+        <input type="range" id="churn" min="1" max="15" value="5" step="0.5">
+        <div class="range-label">1% — 15%</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>💰 Revenue Projections</h2>
+    <div class="grid-3">
+      <div class="result-box">
+        <div class="big" id="monthly-revenue">$1,000</div>
+        <div class="label">Monthly Revenue</div>
+      </div>
+      <div class="result-box green">
+        <div class="big" id="annual-revenue">$12,000</div>
+        <div class="label">Annual Revenue (12mo)</div>
+      </div>
+      <div class="result-box">
+        <div class="big" id="paid-subs-count">125</div>
+        <div class="label">Paying Subscribers</div>
+      </div>
+    </div>
+    <div class="grid-3" style="margin-top:12px;">
+      <div class="result-box warning">
+        <div class="big" id="monthly-churn-count">6</div>
+        <div class="label">Est. Monthly Churned</div>
+      </div>
+      <div class="result-box">
+        <div class="big" id="platform-fee">$100</div>
+        <div class="label">Platform Fee (10%)</div>
+      </div>
+      <div class="result-box green">
+        <div class="big" id="net-monthly">$900</div>
+        <div class="label">Net Monthly (after fees)</div>
+      </div>
+    </div>
+    <div class="recommend">
+      💡 <strong>Recommendation:</strong> For a newsletter with <span id="rec-subs">2,500</span> subscribers at <span id="rec-price">$8/mo</span> and <span id="rec-conv">5%</span> conversion, using <strong>beehiiv</strong> (0% platform fee on Scale plan) saves you <span id="rec-savings">$100</span>/mo compared to Substack (10%). <a href="../newsletter-platforms/index.html">Compare newsletter platforms →</a>
+    </div>
+  </div>
+
+  <div class="disclosure">This calculator provides estimates only. Actual revenue depends on audience quality, engagement, pricing strategy, and platform terms. Some links are affiliate links.</div>
+
+  <div class="footer">
+    <p>Patreon Alternative Calculator — Free Self-Serve Tool</p>
+  </div>
+</div>
+
+<script>
+function fmt(n) {
+  if (n >= 1000000) return '$' + (n/1000000).toFixed(1) + 'M';
+  if (n >= 1000) return '$' + (n/1000).toFixed(1) + 'K';
+  return '$' + Math.round(n);
+}
+function fmtNum(n) {
+  return n >= 1000 ? (n/1000).toFixed(1) + 'K' : Math.round(n).toString();
+}
+function update() {
+  var totalSubs = parseInt(document.getElementById('total-subs').value);
+  var price = parseInt(document.getElementById('price').value);
+  var convPct = parseFloat(document.getElementById('conversion').value);
+  var churnPct = parseFloat(document.getElementById('churn').value);
+
+  document.getElementById('total-subs-display').textContent = fmtNum(totalSubs);
+  document.getElementById('price-display').textContent = '$' + price;
+  document.getElementById('conversion-display').textContent = convPct + '%';
+  document.getElementById('churn-display').textContent = churnPct + '%';
+
+  var paidSubs = Math.round(totalSubs * (convPct / 100));
+  var monthlyRev = paidSubs * price;
+  var annualRev = monthlyRev * 12;
+  var monthlyChurn = Math.round(paidSubs * (churnPct / 100));
+  var platformFee10 = Math.round(monthlyRev * 0.10);
+  var netMonthly = monthlyRev - platformFee10;
+
+  document.getElementById('monthly-revenue').textContent = fmt(monthlyRev);
+  document.getElementById('annual-revenue').textContent = fmt(annualRev);
+  document.getElementById('paid-subs-count').textContent = fmtNum(paidSubs);
+  document.getElementById('monthly-churn-count').textContent = Math.round(monthlyChurn);
+  document.getElementById('platform-fee').textContent = fmt(platformFee10);
+  document.getElementById('net-monthly').textContent = fmt(netMonthly);
+
+  document.getElementById('rec-subs').textContent = fmtNum(totalSubs);
+  document.getElementById('rec-price').textContent = '$' + price + '/mo';
+  document.getElementById('rec-conv').textContent = convPct + '%';
+  document.getElementById('rec-savings').textContent = fmt(platformFee10);
+}
+
+document.getElementById('total-subs').addEventListener('input', update);
+document.getElementById('price').addEventListener('input', update);
+document.getElementById('conversion').addEventListener('input', update);
+document.getElementById('churn').addEventListener('input', update);
+
+update();
+</script>
+</body>
+</html>

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="canonical" href="https://workflow-pack-lab.github.io/workflow-pack-lab/tools/affiliate-commission-calculator/">
+<title>Affiliate Commission Calculator — Estimate Recurring Revenue (2026)</title>
+<meta name="description" content="Free affiliate commission calculator. Estimate monthly recurring revenue from SaaS affiliate programs. Compare up to 10 programs with commission rates, cookie windows, and conversion scenarios.">
+<meta property="og:title" content="Affiliate Commission Calculator — Free Tool">
+<meta property="og:description" content="Estimate your monthly recurring revenue from SaaS affiliate programs. Compare programs side-by-side with commission rates, cookie windows, and conversion scenarios.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Affiliate Commission Calculator",
+  "description": "Free tool to estimate monthly recurring revenue from SaaS affiliate programs",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Any",
+  "offers": { "@type": "Offer", "price": "0" }
+}
+</script>
+<style>
+  :root { --bg: #f8fafc; --card: #fff; --text: #1e293b; --muted: #64748b; --border: #e2e8f0; --accent: #3b82f6; --green: #22c55e; --green-bg: #dcfce7; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; padding: 20px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 1.5rem; margin-bottom: 0.25rem; }
+  .subtitle { color: var(--muted); margin-bottom: 1rem; font-size: 0.9rem; }
+  .calc-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 24px; margin-bottom: 1rem; }
+  .calc-card h2 { font-size: 1.1rem; margin-bottom: 1rem; }
+  .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 1rem; }
+  .form-group { margin-bottom: 0.75rem; }
+  .form-group.full { grid-column: 1 / -1; }
+  label { display: block; font-size: 0.82rem; font-weight: 600; margin-bottom: 4px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.3px; }
+  input, select { width: 100%; padding: 8px 10px; border: 1px solid var(--border); border-radius: 6px; font-size: 0.9rem; font-family: inherit; }
+  input:focus, select:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px rgba(59,130,246,0.1); }
+  .program-row { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr; gap: 8px; align-items: end; margin-bottom: 8px; padding: 8px; background: #f8fafc; border-radius: 6px; }
+  .program-row .form-group { margin-bottom: 0; }
+  .program-row label { font-size: 0.7rem; }
+  .program-row input { font-size: 0.82rem; }
+  .btn { padding: 10px 20px; border: none; border-radius: 6px; font-size: 0.9rem; font-weight: 600; cursor: pointer; background: var(--accent); color: #fff; }
+  .btn:hover { background: #2563eb; }
+  .btn-secondary { background: #e2e8f0; color: var(--text); }
+  .btn-secondary:hover { background: #cbd5e1; }
+  .btn-group { display: flex; gap: 8px; margin-top: 1rem; flex-wrap: wrap; }
+  .results { display: none; margin-top: 1.5rem; }
+  .results.visible { display: block; }
+  .result-card { background: var(--green-bg); border: 1px solid var(--green); border-radius: 12px; padding: 20px; text-align: center; margin-bottom: 1rem; }
+  .result-amount { font-size: 2.5rem; font-weight: 700; color: #166534; margin: 0.5rem 0; }
+  .result-label { font-size: 0.85rem; color: #166534; }
+  .result-breakdown { margin-top: 1rem; }
+  .result-breakdown table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+  .result-breakdown th { text-align: left; padding: 8px; border-bottom: 2px solid var(--border); font-weight: 600; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.3px; color: var(--muted); }
+  .result-breakdown td { padding: 8px; border-bottom: 1px solid var(--border); }
+  .result-breakdown tr:last-child td { border-bottom: none; }
+  .result-breakdown .total-row { font-weight: 700; background: #f1f5f9; }
+  .footer { text-align: center; padding: 20px 0; font-size: 0.82rem; color: var(--muted); margin-top: 1rem; border-top: 1px solid var(--border); }
+  .footer a { color: var(--accent); }
+  @media (max-width: 600px) { .form-grid { grid-template-columns: 1fr; } .program-row { grid-template-columns: 1fr 1fr; } }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>💰 Affiliate Commission Calculator</h1>
+  <p class="subtitle">Estimate monthly recurring revenue from SaaS and tool affiliate programs. Compare up to 10 programs side-by-side.</p>
+
+  <div class="calc-card">
+    <h2>📊 Your Traffic & Conversion</h2>
+    <div class="form-grid">
+      <div class="form-group">
+        <label>Monthly Site Visitors</label>
+        <input type="number" id="visitors" value="1000" min="0" step="100">
+      </div>
+      <div class="form-group">
+        <label>Click-Through Rate (%)</label>
+        <input type="number" id="ctr" value="5" min="0" step="0.5" max="100">
+      </div>
+      <div class="form-group full">
+        <label>Average Conversion Rate (%) — percent of clicks that purchase</label>
+        <input type="number" id="conversionRate" value="3" min="0" step="0.5" max="100">
+      </div>
+    </div>
+  </div>
+
+  <div class="calc-card">
+    <h2>📋 Affiliate Programs <button class="btn btn-secondary" onclick="addProgram()" style="float:right;font-size:0.8rem;padding:4px 12px;">+ Add Program</button></h2>
+    <div id="programs">
+      <div class="program-row">
+        <div class="form-group"><label>Program Name</label><input type="text" class="pname" value="Program A" placeholder="Name"></div>
+        <div class="form-group"><label>Commission</label><input type="text" class="pcomm" value="20% recurring" placeholder="e.g. 20% recurring"></div>
+        <div class="form-group"><label>Avg Plan Price</label><input type="number" class="pprice" value="29" min="0" step="1" placeholder="$"></div>
+        <div class="form-group"><label>Cookie (days)</label><input type="number" class="pcookie" value="30" min="1" step="1"></div>
+        <div class="form-group"><label>Monthly Refs</label><input type="number" class="prefs" value="2" min="0" step="1" placeholder="#"></div>
+      </div>
+    </div>
+    <div class="btn-group">
+      <button class="btn" onclick="calculate()">Calculate Revenue →</button>
+      <button class="btn btn-secondary" onclick="loadPreset()">Load Preset (Comparison Pages)</button>
+      <button class="btn btn-secondary" onclick="clearAll()">Clear All</button>
+    </div>
+  </div>
+
+  <div class="results card" id="results">
+    <div class="result-card">
+      <div class="result-label">Estimated Monthly Affiliate Revenue</div>
+      <div class="result-amount" id="totalMonthly">$0</div>
+      <div class="result-label">Projected Annual: <strong id="totalAnnual">$0</strong> &nbsp;|&nbsp; Per Referral Value: <strong id="avgPerRef">$0</strong></div>
+    </div>
+    <div class="calc-card result-breakdown" id="breakdown" style="padding:16px;">
+      <h3>Program Breakdown</h3>
+      <table>
+        <thead><tr><th>Program</th><th style="text-align:right">Commission</th><th style="text-align:right">Plan Price</th><th style="text-align:right">Cookie (d)</th><th style="text-align:right">Refs/mo</th><th style="text-align:right">Monthly</th><th style="text-align:right">Annual</th></tr></thead>
+        <tbody id="breakdownBody"></tbody>
+      </table>
+    </div>
+    <div class="calc-card" style="padding:16px;margin-top:1rem;">
+      <h3>🚀 Traffic Needed to Hit Targets</h3>
+      <div id="trafficTargets"></div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p>⚠️ Estimates only. Actual results vary based on audience, content quality, and program terms.</p>
+    <p><a href="../index.html">← Back to all comparison pages</a> &nbsp;|&nbsp; <a href="../../systems/niche-data/index.html">Data Sources</a></p>
+  </div>
+</div>
+
+<script>
+let programCount = 1;
+const PRESET = [
+  { name: "NordVPN", comm: "100% per sale", price: 81, cookie: 30, refs: 0 },
+  { name: "Buffer", comm: "20% recurring", price: 6, cookie: 30, refs: 0 },
+  { name: "Publer", comm: "30% recurring", price: 10, cookie: 30, refs: 0 },
+  { name: "ClickUp", comm: "15-30% recurring", price: 7, cookie: 30, refs: 0 },
+  { name: "Descript", comm: "40% recurring", price: 24, cookie: 30, refs: 0 },
+  { name: "Kajabi", comm: "30% recurring", price: 149, cookie: 30, refs: 0 },
+];
+
+function addProgram(name, comm, price, cookie, refs) {
+  const div = document.createElement('div');
+  div.className = 'program-row';
+  div.innerHTML = `
+    <div class="form-group"><label>Program</label><input type="text" class="pname" value="${name || 'Program ' + String.fromCharCode(65 + programCount)}" placeholder="Name"></div>
+    <div class="form-group"><label>Commission</label><input type="text" class="pcomm" value="${comm || '20% recurring'}" placeholder="e.g. 20%"></div>
+    <div class="form-group"><label>Avg Price</label><input type="number" class="pprice" value="${price || 29}" min="0" step="1"></div>
+    <div class="form-group"><label>Cookie (d)</label><input type="number" class="pcookie" value="${cookie || 30}" min="1" step="1"></div>
+    <div class="form-group"><label>Refs/mo</label><input type="number" class="prefs" value="${refs || 2}" min="0" step="1"></div>
+  `;
+  document.getElementById('programs').appendChild(div);
+  programCount++;
+}
+
+function parseCommission(str) {
+  str = str.toLowerCase().replace(/%/g, '').replace(/up to /g, '').replace(/\$/g, '');
+  if (str.includes('per sale') || str.includes('/sale')) {
+    const num = parseFloat(str.match(/[\d.]+/)?.[0] || 0);
+    return { type: 'flat', value: num };
+  }
+  const num = parseFloat(str.match(/[\d.]+/)?.[0] || 0);
+  if (str.includes('recurring') || str.includes('lifetime') || str.includes('months')) {
+    return { type: 'recurring', value: num / 100 };
+  }
+  return { type: 'recurring', value: num / 100 };
+}
+
+function calculate() {
+  const visitors = parseFloat(document.getElementById('visitors').value) || 0;
+  const ctr = (parseFloat(document.getElementById('ctr').value) || 0) / 100;
+  const convRate = (parseFloat(document.getElementById('conversionRate').value) || 0) / 100;
+  const clicks = visitors * ctr;
+  const conversions = clicks * convRate;
+
+  const rows = document.querySelectorAll('.program-row');
+  let totalMonthly = 0;
+  let totalRefs = 0;
+  let breakdownHtml = '';
+
+  rows.forEach(row => {
+    const name = row.querySelector('.pname').value || 'Unnamed';
+    const commStr = row.querySelector('.pcomm').value || '0';
+    const price = parseFloat(row.querySelector('.pprice').value) || 0;
+    const cookie = parseInt(row.querySelector('.pcookie').value) || 30;
+    const refs = parseFloat(row.querySelector('.prefs').value) || 0;
+    totalRefs += refs;
+
+    const parsed = parseCommission(commStr);
+    let monthly = 0;
+    if (parsed.type === 'flat') {
+      monthly = refs * parsed.value;
+    } else {
+      monthly = refs * price * parsed.value;
+    }
+    totalMonthly += monthly;
+
+    breakdownHtml += `<tr>
+      <td><strong>${name}</strong></td>
+      <td style="text-align:right">${commStr}</td>
+      <td style="text-align:right">$${price.toFixed(0)}</td>
+      <td style="text-align:right">${cookie}</td>
+      <td style="text-align:right">${refs}</td>
+      <td style="text-align:right"><strong>$${monthly.toFixed(2)}</strong></td>
+      <td style="text-align:right">$${(monthly * 12).toFixed(2)}</td>
+    </tr>`;
+  });
+
+  const annual = totalMonthly * 12;
+  document.getElementById('totalMonthly').textContent = '$' + totalMonthly.toFixed(2) + '/mo';
+  document.getElementById('totalAnnual').textContent = '$' + annual.toFixed(2) + '/yr';
+  document.getElementById('avgPerRef').textContent = totalRefs > 0 ? '$' + (totalMonthly / totalRefs).toFixed(2) + '/ref' : '$0';
+  document.getElementById('breakdownBody').innerHTML = breakdownHtml + `<tr class="total-row"><td><strong>TOTAL</strong></td><td></td><td></td><td></td><td>${totalRefs}</td><td style="text-align:right"><strong>$${totalMonthly.toFixed(2)}</strong></td><td style="text-align:right"><strong>$${annual.toFixed(2)}</strong></td></tr>`;
+
+  // Traffic targets
+  let targetsHtml = '';
+  const targets = [500, 1000, 2500, 5000, 10000, 50000];
+  targets.forEach(t => {
+    const estClicks = t * ctr;
+    const estConv = estClicks * convRate;
+    // Distribute conversions proportionally across programs
+    const totalRefCapacity = rows.length * estConv;
+    const estRevenue = totalRefCapacity > 0 ? 
+      rows.length * estConv * (totalMonthly / (totalRefs || 1)) : 0;
+    targetsHtml += `<div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--border);font-size:0.85rem;">
+      <span>${t.toLocaleString()} visitors/mo</span>
+      <span><strong>~$${estRevenue.toFixed(0)}/mo</strong> (${estConv.toFixed(0)} conversions)</span>
+    </div>`;
+  });
+  document.getElementById('trafficTargets').innerHTML = targetsHtml;
+
+  document.getElementById('results').classList.add('visible');
+  document.getElementById('results').scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function loadPreset() {
+  document.getElementById('programs').innerHTML = '';
+  programCount = 0;
+  PRESET.forEach(p => addProgram(p.name, p.comm, p.price, p.cookie, p.refs));
+  // Auto-calc
+  setTimeout(calculate, 100);
+}
+
+function clearAll() {
+  document.getElementById('programs').innerHTML = '';
+  programCount = 0;
+  addProgram('Program A', '20% recurring', 29, 30, 2);
+  document.getElementById('results').classList.remove('visible');
+}
+</script>
+
+<div class="disclosure"><strong>Affiliate Disclosure: Some links on this page are affiliate links. We may earn a commission at no extra cost to you. All data is independently researched; verify current terms before buying.</strong></div>
+</body>
+</html>
