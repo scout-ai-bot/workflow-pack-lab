@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-10T18:15:14.893808+00:00",
+  "generated_at": "2026-06-10T19:48:16.025902+00:00",
   "source_last_updated": "2026-06-09",
   "program_count": 31,
   "programs": {
@@ -79,7 +79,7 @@
       "id": "nordvpn",
       "name": "NordVPN",
       "program": "Impact / Nord Security partner program",
-      "commission": "up to 100%/sale reported by public partner listings",
+      "commission": "Up to 100% on 1-MONTH plan signups only; 40% on 1-year/2-year plans; 30% on renewals. Do NOT cite as blanket 100%/sale. Verify exact tier in Jeff's dashboard.",
       "cookie_window": "30 days",
       "niche": "General"
     },
@@ -87,7 +87,7 @@
       "id": "surfshark",
       "name": "Surfshark",
       "program": "Surfshark Affiliates",
-      "commission": "up to 100%/sale reported by public partner listings",
+      "commission": "UNVERIFIED \u2014 'up to 100%/sale' likely applies to monthly plans only (same pattern as NordVPN). Verify before citing. Not yet enrolled.",
       "cookie_window": "30 days",
       "niche": "General"
     },
@@ -95,7 +95,7 @@
       "id": "cursor",
       "name": "Cursor",
       "program": "Cursor affiliate/referral program",
-      "commission": "$15/mo recurring noted in source page",
+      "commission": "UNVERIFIED \u2014 no official cash affiliate program found (Cursor forum confirms referral links grant credits, not cash). The previous $15/mo-recurring figure was unsubstantiated. Do not project Cursor revenue until Jeff confirms actual terms from his dashboard.",
       "cookie_window": "unknown",
       "niche": "General"
     },
@@ -103,8 +103,8 @@
       "id": "beehiiv",
       "name": "beehiiv",
       "program": "Rewardful",
-      "commission": "up to 60% lifetime recurring noted in source page",
-      "cookie_window": "unknown",
+      "commission": "50% of referred revenue for 12 MONTHS (base tier; 55-60% only at high partner tiers). NOT lifetime. Verify tier in Jeff's dashboard.",
+      "cookie_window": "60 days, first-touch",
       "niche": "General"
     },
     "webflow": {

@@ -12,14 +12,14 @@
 | Cloudways | Up to $125/sale + $10/sub-affiliate | 60 days | Web Hosting |
 | SiteGround | ~$100/sale | 60 days | Web Hosting |
 | Bluehost | $65+/sale | 30 days | Web Hosting |
-| beehiiv | up to 60% lifetime recurring noted in source page | unknown | General |
 | Hostinger | 60%/sale noted in source page | 120 days noted in source page | General |
-| NordVPN | up to 100%/sale reported by public partner listings | 30 days | General |
-| Surfshark | up to 100%/sale reported by public partner listings | 30 days | General |
-| Cursor | $15/mo recurring noted in source page | unknown | General |
+| NordVPN | Up to 100% on 1-MONTH plan signups only; 40% on 1-year/2-year plans; 30% on renewals. Do NOT cite as blanket 100%/sale. Verify exact tier in Jeff's dashboard. | 30 days | General |
+| Surfshark | UNVERIFIED — 'up to 100%/sale' likely applies to monthly plans only (same pattern as NordVPN). Verify before citing. Not yet enrolled. | 30 days | General |
+| Cursor | UNVERIFIED — no official cash affiliate program found (Cursor forum confirms referral links grant credits, not cash). The previous $15/mo-recurring figure was unsubstantiated. Do not project Cursor revenue until Jeff confirms actual terms from his dashboard. | unknown | General |
 | HubSpot | Up to 100% first month + 30% recurring 12mo | 90 days | CRM/Sales |
 | Typeform | 30% recurring, 90-day cookie | 90 days | Form Builders |
 | Jotform | 30% recurring, 120-day cookie | 120 days | Form Builders |
+| Tally.so | 30% recurring | unknown | Form Builders |
 
 ## All Programs by Niche
 
@@ -61,11 +61,11 @@
 
 | Program | Commission | Cookie Window |
 |---------|:----------:|:------------:|
-| beehiiv | up to 60% lifetime recurring noted in source page | unknown |
 | Hostinger | 60%/sale noted in source page | 120 days noted in source page |
-| NordVPN | up to 100%/sale reported by public partner listings | 30 days |
-| Surfshark | up to 100%/sale reported by public partner listings | 30 days |
-| Cursor | $15/mo recurring noted in source page | unknown |
+| NordVPN | Up to 100% on 1-MONTH plan signups only; 40% on 1-year/2-year plans; 30% on renewals. Do NOT cite as blanket 100%/sale. Verify exact tier in Jeff's dashboard. | 30 days |
+| Surfshark | UNVERIFIED — 'up to 100%/sale' likely applies to monthly plans only (same pattern as NordVPN). Verify before citing. Not yet enrolled. | 30 days |
+| Cursor | UNVERIFIED — no official cash affiliate program found (Cursor forum confirms referral links grant credits, not cash). The previous $15/mo-recurring figure was unsubstantiated. Do not project Cursor revenue until Jeff confirms actual terms from his dashboard. | unknown |
+| beehiiv | 50% of referred revenue for 12 MONTHS (base tier; 55-60% only at high partner tiers). NOT lifetime. Verify tier in Jeff's dashboard. | 60 days, first-touch |
 | Webflow | 30% for 12 months noted in task | unknown |
 | Framer | 20% lifetime recurring noted in task | unknown |
 | RightBlogger | 50% lifetime recurring noted in source page | unknown |
