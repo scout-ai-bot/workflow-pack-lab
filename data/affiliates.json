@@ -1,0 +1,255 @@
+{
+  "generated_at": "2026-06-10T16:32:24.690048+00:00",
+  "source_last_updated": "2026-06-09",
+  "program_count": 31,
+  "programs": {
+    "hostinger": {
+      "id": "hostinger",
+      "name": "Hostinger",
+      "program": "Hostinger affiliates",
+      "commission": "60%/sale noted in source page",
+      "cookie_window": "120 days noted in source page",
+      "niche": "General"
+    },
+    "siteground": {
+      "id": "siteground",
+      "name": "SiteGround",
+      "program": "SiteGround Affiliates",
+      "commission": "~$100/sale",
+      "cookie_window": "60 days",
+      "niche": "Web Hosting"
+    },
+    "bluehost": {
+      "id": "bluehost",
+      "name": "Bluehost",
+      "program": "Bluehost Affiliates",
+      "commission": "$65+/sale",
+      "cookie_window": "30 days",
+      "niche": "Web Hosting"
+    },
+    "wpengine": {
+      "id": "wpengine",
+      "name": "WP Engine",
+      "program": "WP Engine Affiliate Program",
+      "commission": "$200/sale flat fee",
+      "cookie_window": "90 days",
+      "niche": "Web Hosting"
+    },
+    "cloudways": {
+      "id": "cloudways",
+      "name": "Cloudways",
+      "program": "Cloudways Affiliates",
+      "commission": "Up to $125/sale + $10/sub-affiliate",
+      "cookie_window": "60 days",
+      "niche": "Web Hosting"
+    },
+    "dreamhost": {
+      "id": "dreamhost",
+      "name": "DreamHost",
+      "program": "DreamHost Affiliates",
+      "commission": "Up to $200/sale",
+      "cookie_window": "90 days",
+      "niche": "Web Hosting"
+    },
+    "a2hosting": {
+      "id": "a2hosting",
+      "name": "A2 Hosting",
+      "program": "A2 Hosting Affiliates",
+      "commission": "Up to $150/sale",
+      "cookie_window": "90 days",
+      "niche": "Web Hosting"
+    },
+    "kinsta": {
+      "id": "kinsta",
+      "name": "Kinsta",
+      "program": "Kinsta Affiliates",
+      "commission": "$100-$500+/sale (scales with plan)",
+      "cookie_window": "30 days",
+      "niche": "Web Hosting"
+    },
+    "canva": {
+      "id": "canva",
+      "name": "Canva",
+      "program": "Canva Affiliates (Impact)",
+      "commission": "30% recurring on Pro ($13/mo)",
+      "cookie_window": "30 days",
+      "niche": "AI Image Generation"
+    },
+    "nordvpn": {
+      "id": "nordvpn",
+      "name": "NordVPN",
+      "program": "Impact / Nord Security partner program",
+      "commission": "up to 100%/sale reported by public partner listings",
+      "cookie_window": "30 days",
+      "niche": "General"
+    },
+    "surfshark": {
+      "id": "surfshark",
+      "name": "Surfshark",
+      "program": "Surfshark Affiliates",
+      "commission": "up to 100%/sale reported by public partner listings",
+      "cookie_window": "30 days",
+      "niche": "General"
+    },
+    "cursor": {
+      "id": "cursor",
+      "name": "Cursor",
+      "program": "Cursor affiliate/referral program",
+      "commission": "$15/mo recurring noted in source page",
+      "cookie_window": "unknown",
+      "niche": "General"
+    },
+    "beehiiv": {
+      "id": "beehiiv",
+      "name": "beehiiv",
+      "program": "Rewardful",
+      "commission": "up to 60% lifetime recurring noted in source page",
+      "cookie_window": "unknown",
+      "niche": "General"
+    },
+    "webflow": {
+      "id": "webflow",
+      "name": "Webflow",
+      "program": "Webflow affiliate program",
+      "commission": "30% for 12 months noted in task",
+      "cookie_window": "unknown",
+      "niche": "General"
+    },
+    "framer": {
+      "id": "framer",
+      "name": "Framer",
+      "program": "Framer affiliate program",
+      "commission": "20% lifetime recurring noted in task",
+      "cookie_window": "unknown",
+      "niche": "General"
+    },
+    "rightblogger": {
+      "id": "rightblogger",
+      "name": "RightBlogger",
+      "program": "Rewardful/direct",
+      "commission": "50% lifetime recurring noted in source page",
+      "cookie_window": "unknown",
+      "niche": "General"
+    },
+    "writesonic": {
+      "id": "writesonic",
+      "name": "Writesonic",
+      "program": "Impact/direct",
+      "commission": "25-30% lifetime recurring noted in source page",
+      "cookie_window": "unknown",
+      "niche": "General"
+    },
+    "surferseo": {
+      "id": "surferseo",
+      "name": "Surfer SEO",
+      "program": "Surfer SEO affiliates",
+      "commission": "30% lifetime recurring noted in source page",
+      "cookie_window": "unknown",
+      "niche": "General"
+    },
+    "hubspot": {
+      "id": "hubspot",
+      "name": "HubSpot",
+      "program": "HubSpot Partners (Impact)",
+      "commission": "Up to 100% first month + 30% recurring 12mo",
+      "cookie_window": "90 days",
+      "niche": "CRM/Sales"
+    },
+    "pipedrive": {
+      "id": "pipedrive",
+      "name": "Pipedrive",
+      "program": "Pipedrive Partner Program",
+      "commission": "20% recurring + 4 months enterprise bonus",
+      "cookie_window": "90 days",
+      "niche": "CRM/Sales"
+    },
+    "close": {
+      "id": "close",
+      "name": "Close",
+      "program": "Close Affiliate Program",
+      "commission": "30% lifetime recurring",
+      "cookie_window": "60 days",
+      "niche": "CRM/Sales"
+    },
+    "copper": {
+      "id": "copper",
+      "name": "Copper",
+      "program": "Copper Affiliates",
+      "commission": "20% lifetime recurring",
+      "cookie_window": "60 days",
+      "niche": "CRM/Sales"
+    },
+    "freshsales": {
+      "id": "freshsales",
+      "name": "Freshsales",
+      "program": "Freshworks Affiliates",
+      "commission": "20% recurring 12mo",
+      "cookie_window": "30 days",
+      "niche": "CRM/Sales"
+    },
+    "typeform": {
+      "id": "typeform",
+      "name": "Typeform",
+      "program": "Typeform Affiliates (Impact)",
+      "commission": "30% recurring, 90-day cookie",
+      "cookie_window": "90 days",
+      "niche": "Form Builders"
+    },
+    "jotform": {
+      "id": "jotform",
+      "name": "Jotform",
+      "program": "Jotform Affiliates (Impact)",
+      "commission": "30% recurring, 120-day cookie",
+      "cookie_window": "120 days",
+      "niche": "Form Builders"
+    },
+    "tally": {
+      "id": "tally",
+      "name": "Tally.so",
+      "program": "Tally Affiliates (Rewardful)",
+      "commission": "30% recurring",
+      "cookie_window": "unknown",
+      "niche": "Form Builders"
+    },
+    "fillout": {
+      "id": "fillout",
+      "name": "Fillout",
+      "program": "Fillout Affiliates",
+      "commission": "20% recurring, 90-day cookie",
+      "cookie_window": "90 days",
+      "niche": "Form Builders"
+    },
+    "relayapp": {
+      "id": "relayapp",
+      "name": "Relay.app",
+      "program": "Relay Affiliates (Rewardful)",
+      "commission": "30% recurring, 60-day cookie",
+      "cookie_window": "60 days",
+      "niche": "API Automation"
+    },
+    "n8n": {
+      "id": "n8n",
+      "name": "n8n",
+      "program": "n8n Affiliates (FirstPromoter)",
+      "commission": "30% recurring, 90-day cookie",
+      "cookie_window": "90 days",
+      "niche": "API Automation"
+    },
+    "pipedream": {
+      "id": "pipedream",
+      "name": "Pipedream",
+      "program": "Pipedream Affiliates",
+      "commission": "20% recurring",
+      "cookie_window": "unknown",
+      "niche": "API Automation"
+    },
+    "activepieces": {
+      "id": "activepieces",
+      "name": "Activepieces",
+      "program": "Activepieces Affiliates",
+      "commission": "30% recurring",
+      "cookie_window": "unknown",
+      "niche": "API Automation"
+    }
+  }
+}
