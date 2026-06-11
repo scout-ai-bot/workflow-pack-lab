@@ -15,11 +15,11 @@
 | Wix | Up to $100 per referred subscription | 30 days | E-Commerce Platforms |
 | Bluehost | $65+/sale | 30 days | Web Hosting |
 | Hostinger | 60%/sale noted in source page | 120 days noted in source page | General |
-| NordVPN | Up to 100% on 1-MONTH plan signups only; 40% on 1-year/2-year plans; 30% on renewals. Do NOT cite as blanket 100%/sale. Verify exact tier in Jeff's dashboard. | 30 days | General |
 | Surfshark | UNVERIFIED — 'up to 100%/sale' likely applies to monthly plans only (same pattern as NordVPN). Verify before citing. Not yet enrolled. | 30 days | General |
 | Cursor | UNVERIFIED — no official cash affiliate program found (Cursor forum confirms referral links grant credits, not cash). The previous $15/mo-recurring figure was unsubstantiated. Do not project Cursor revenue until Jeff confirms actual terms from his dashboard. | unknown | General |
 | HubSpot | Up to 100% first month + 30% recurring 12mo | 90 days | CRM/Sales |
 | Typeform | 30% recurring, 90-day cookie | 90 days | Form Builders |
+| Jotform | 30% recurring, 120-day cookie | 120 days | Form Builders |
 
 ## All Programs by Niche
 
@@ -73,15 +73,27 @@
 | Program | Commission | Cookie Window |
 |---------|:----------:|:------------:|
 | Hostinger | 60%/sale noted in source page | 120 days noted in source page |
-| NordVPN | Up to 100% on 1-MONTH plan signups only; 40% on 1-year/2-year plans; 30% on renewals. Do NOT cite as blanket 100%/sale. Verify exact tier in Jeff's dashboard. | 30 days |
 | Surfshark | UNVERIFIED — 'up to 100%/sale' likely applies to monthly plans only (same pattern as NordVPN). Verify before citing. Not yet enrolled. | 30 days |
 | Cursor | UNVERIFIED — no official cash affiliate program found (Cursor forum confirms referral links grant credits, not cash). The previous $15/mo-recurring figure was unsubstantiated. Do not project Cursor revenue until Jeff confirms actual terms from his dashboard. | unknown |
+| NordVPN | 30–100% per sale (CPS), varies by plan/offer (~100% monthly to ~30-40% multi-year). Regional/channel offers (Discord, Korea, Arabia) flat 40%. Source: affiliates.nordvpn.com dashboard. | 30 days |
 | beehiiv | 50% of referred revenue for 12 MONTHS (base tier; 55-60% only at high partner tiers). NOT lifetime. Verify tier in Jeff's dashboard. | 60 days, first-touch |
 | Webflow | 30% for 12 months noted in task | unknown |
 | Framer | 20% lifetime recurring noted in task | unknown |
 | RightBlogger | 50% lifetime recurring noted in source page | unknown |
 | Writesonic | 25-30% lifetime recurring noted in source page | unknown |
 | Surfer SEO | 30% lifetime recurring noted in source page | unknown |
+
+### Gig Economy
+
+| Program | Commission | Cookie Window |
+|---------|:----------:|:------------:|
+| Uber (driver referral) | Referral bonus only — capped at 10 total payouts, invites expire 90 days. NOT publishable. | n/a |
+
+### Password Managers
+
+| Program | Commission | Cookie Window |
+|---------|:----------:|:------------:|
+| NordPass | 10–75% per sale (NordPass Revenue Share, varies by plan); 25% for NordPass Business. Source: affiliates.nordvpn.com dashboard. (Resolves earlier 75%-vs-30% conflict — it's a RANGE.) | verify in dashboard |
 
 ### Web Hosting
 

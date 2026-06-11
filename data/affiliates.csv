@@ -9,7 +9,6 @@ siteground,SiteGround,SiteGround Affiliates,~$100/sale,60 days,Web Hosting
 wix_ecommerce,Wix,Wix Affiliates,Up to $100 per referred subscription,30 days,E-Commerce Platforms
 bluehost,Bluehost,Bluehost Affiliates,$65+/sale,30 days,Web Hosting
 hostinger,Hostinger,Hostinger affiliates,60%/sale noted in source page,120 days noted in source page,General
-nordvpn,NordVPN,Impact / Nord Security partner program,Up to 100% on 1-MONTH plan signups only; 40% on 1-year/2-year plans; 30% on renewals. Do NOT cite as blanket 100%/sale. Verify exact tier in Jeff's dashboard.,30 days,General
 surfshark,Surfshark,Surfshark Affiliates,UNVERIFIED — 'up to 100%/sale' likely applies to monthly plans only (same pattern as NordVPN). Verify before citing. Not yet enrolled.,30 days,General
 cursor,Cursor,Cursor affiliate/referral program,"UNVERIFIED — no official cash affiliate program found (Cursor forum confirms referral links grant credits, not cash). The previous $15/mo-recurring figure was unsubstantiated. Do not project Cursor revenue until Jeff confirms actual terms from his dashboard.",unknown,General
 hubspot,HubSpot,HubSpot Partners (Impact),Up to 100% first month + 30% recurring 12mo,90 days,CRM/Sales
@@ -27,6 +26,7 @@ pipedrive,Pipedrive,Pipedrive Partner Program,20% recurring + 4 months enterpris
 freshsales,Freshsales,Freshworks Affiliates,20% recurring 12mo,30 days,CRM/Sales
 fillout,Fillout,Fillout Affiliates,"20% recurring, 90-day cookie",90 days,Form Builders
 pipedream,Pipedream,Pipedream Affiliates,20% recurring,unknown,API Automation
+nordvpn,NordVPN,NordVPN Affiliates (affiliates.nordvpn.com / nordvpnmedia — NOT PartnerStack),"30–100% per sale (CPS), varies by plan/offer (~100% monthly to ~30-40% multi-year). Regional/channel offers (Discord, Korea, Arabia) flat 40%. Source: affiliates.nordvpn.com dashboard.",30 days,General
 beehiiv,beehiiv,Rewardful,50% of referred revenue for 12 MONTHS (base tier; 55-60% only at high partner tiers). NOT lifetime. Verify tier in Jeff's dashboard.,"60 days, first-touch",General
 webflow,Webflow,Webflow affiliate program,30% for 12 months noted in task,unknown,General
 framer,Framer,Framer affiliate program,20% lifetime recurring noted in task,unknown,General
@@ -36,3 +36,5 @@ surferseo,Surfer SEO,Surfer SEO affiliates,30% lifetime recurring noted in sourc
 close,Close,Close Affiliate Program,30% lifetime recurring,60 days,CRM/Sales
 copper,Copper,Copper Affiliates,20% lifetime recurring,60 days,CRM/Sales
 shopify,Shopify,Shopify Affiliates,Subscription referral — exact rates vary. Verify in partner dashboard.,30 days,E-Commerce Platforms
+uber_driver_referral,Uber (driver referral),Uber driver invite / refer-a-friend (NOT an affiliate program),"Referral bonus only — capped at 10 total payouts, invites expire 90 days. NOT publishable.",n/a,Gig Economy
+nordpass,NordPass,Nord Security partner program (same portal as NordVPN affiliate),"10–75% per sale (NordPass Revenue Share, varies by plan); 25% for NordPass Business. Source: affiliates.nordvpn.com dashboard. (Resolves earlier 75%-vs-30% conflict — it's a RANGE.)",verify in dashboard,Password Managers

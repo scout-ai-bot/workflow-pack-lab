@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-06-11T13:35:04.866785+00:00",
+  "generated_at": "2026-06-11T21:01:28.271636+00:00",
   "source_last_updated": "2026-06-09",
-  "program_count": 37,
+  "program_count": 39,
   "programs": {
     "hostinger": {
       "id": "hostinger",
@@ -78,8 +78,8 @@
     "nordvpn": {
       "id": "nordvpn",
       "name": "NordVPN",
-      "program": "Impact / Nord Security partner program",
-      "commission": "Up to 100% on 1-MONTH plan signups only; 40% on 1-year/2-year plans; 30% on renewals. Do NOT cite as blanket 100%/sale. Verify exact tier in Jeff's dashboard.",
+      "program": "NordVPN Affiliates (affiliates.nordvpn.com / nordvpnmedia \u2014 NOT PartnerStack)",
+      "commission": "30\u2013100% per sale (CPS), varies by plan/offer (~100% monthly to ~30-40% multi-year). Regional/channel offers (Discord, Korea, Arabia) flat 40%. Source: affiliates.nordvpn.com dashboard.",
       "cookie_window": "30 days",
       "niche": "General"
     },
@@ -298,6 +298,22 @@
       "commission": "30% recurring lifetime",
       "cookie_window": "90 days",
       "niche": "E-Commerce Platforms"
+    },
+    "uber_driver_referral": {
+      "id": "uber_driver_referral",
+      "name": "Uber (driver referral)",
+      "program": "Uber driver invite / refer-a-friend (NOT an affiliate program)",
+      "commission": "Referral bonus only \u2014 capped at 10 total payouts, invites expire 90 days. NOT publishable.",
+      "cookie_window": "n/a",
+      "niche": "Gig Economy"
+    },
+    "nordpass": {
+      "id": "nordpass",
+      "name": "NordPass",
+      "program": "Nord Security partner program (same portal as NordVPN affiliate)",
+      "commission": "10\u201375% per sale (NordPass Revenue Share, varies by plan); 25% for NordPass Business. Source: affiliates.nordvpn.com dashboard. (Resolves earlier 75%-vs-30% conflict \u2014 it's a RANGE.)",
+      "cookie_window": "verify in dashboard",
+      "niche": "Password Managers"
     }
   }
 }
