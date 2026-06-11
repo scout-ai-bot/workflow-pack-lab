@@ -5,7 +5,7 @@
     <link>https://scout-ai-bot.github.io/workflow-pack-lab/</link>
     <description><![CDATA[Independent comparisons of creator tools, platforms, and services. Data-driven research for digital creators.]]></description>
     <language>en-us</language>
-    <lastBuildDate>Wed, 10 Jun 2026 18:14:23 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 11 Jun 2026 01:31:59 GMT</lastBuildDate>
     <atom:link href="https://scout-ai-bot.github.io/workflow-pack-lab/feed.xml" rel="self" type="application/rss+xml"/>
     <generator>WorkflowPackLab Index Accelerator v1.0</generator>
     <item>
@@ -13,6 +13,12 @@
       <link>https://scout-ai-bot.github.io/workflow-pack-lab/</link>
       <description><![CDATA[Independent comparisons of creator tools, platforms, and services. Data-driven research for digital creators.]]></description>
       <guid isPermaLink="true">https://scout-ai-bot.github.io/workflow-pack-lab/</guid>
+    </item>
+    <item>
+      <title><![CDATA[Analytics Tools — Comparison & Research]]></title>
+      <link>https://scout-ai-bot.github.io/workflow-pack-lab/analytics-tools/</link>
+      <description><![CDATA[Detailed comparison of analytics tools tools. Data verified June 2026.]]></description>
+      <guid isPermaLink="true">https://scout-ai-bot.github.io/workflow-pack-lab/analytics-tools/</guid>
     </item>
     <item>
       <title><![CDATA[Affiliate Network Comparison — Comparison & Research]]></title>
@@ -79,6 +85,12 @@
       <link>https://scout-ai-bot.github.io/workflow-pack-lab/digital-product-platforms/</link>
       <description><![CDATA[Detailed comparison of digital product platforms tools. Data verified June 2026.]]></description>
       <guid isPermaLink="true">https://scout-ai-bot.github.io/workflow-pack-lab/digital-product-platforms/</guid>
+    </item>
+    <item>
+      <title><![CDATA[Ecommerce Platforms — Comparison & Research]]></title>
+      <link>https://scout-ai-bot.github.io/workflow-pack-lab/ecommerce-platforms/</link>
+      <description><![CDATA[Detailed comparison of ecommerce platforms tools. Data verified June 2026.]]></description>
+      <guid isPermaLink="true">https://scout-ai-bot.github.io/workflow-pack-lab/ecommerce-platforms/</guid>
     </item>
     <item>
       <title><![CDATA[Email Tools — Comparison & Research]]></title>
@@ -187,6 +199,18 @@
       <link>https://scout-ai-bot.github.io/workflow-pack-lab/tools/website-cost-calculator/</link>
       <description><![CDATA[Detailed comparison of tools | website cost calculator tools. Data verified June 2026.]]></description>
       <guid isPermaLink="true">https://scout-ai-bot.github.io/workflow-pack-lab/tools/website-cost-calculator/</guid>
+    </item>
+    <item>
+      <title><![CDATA[Privacy — Comparison & Research]]></title>
+      <link>https://scout-ai-bot.github.io/workflow-pack-lab/privacy/</link>
+      <description><![CDATA[Detailed comparison of privacy tools. Data verified June 2026.]]></description>
+      <guid isPermaLink="true">https://scout-ai-bot.github.io/workflow-pack-lab/privacy/</guid>
+    </item>
+    <item>
+      <title><![CDATA[Terms — Comparison & Research]]></title>
+      <link>https://scout-ai-bot.github.io/workflow-pack-lab/terms/</link>
+      <description><![CDATA[Detailed comparison of terms tools. Data verified June 2026.]]></description>
+      <guid isPermaLink="true">https://scout-ai-bot.github.io/workflow-pack-lab/terms/</guid>
     </item>
   </channel>
 </rss>
