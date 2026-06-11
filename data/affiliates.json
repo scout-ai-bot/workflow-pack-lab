@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-06-10T20:07:54.497958+00:00",
+  "generated_at": "2026-06-11T02:28:41.100871+00:00",
   "source_last_updated": "2026-06-09",
-  "program_count": 31,
+  "program_count": 37,
   "programs": {
     "hostinger": {
       "id": "hostinger",
@@ -250,6 +250,54 @@
       "commission": "30% recurring",
       "cookie_window": "unknown",
       "niche": "API Automation"
+    },
+    "shopify": {
+      "id": "shopify",
+      "name": "Shopify",
+      "program": "Shopify Affiliates",
+      "commission": "Subscription referral \u2014 exact rates vary. Verify in partner dashboard.",
+      "cookie_window": "30 days",
+      "niche": "E-Commerce Platforms"
+    },
+    "bigcommerce": {
+      "id": "bigcommerce",
+      "name": "BigCommerce",
+      "program": "BigCommerce Affiliates (Impact)",
+      "commission": "75% first month OR $150 flat per referral + 10% recurring",
+      "cookie_window": "30 days",
+      "niche": "E-Commerce Platforms"
+    },
+    "squarespace": {
+      "id": "squarespace",
+      "name": "Squarespace",
+      "program": "Squarespace Affiliates (Impact)",
+      "commission": "30% recurring for first 12 months of referred plan",
+      "cookie_window": "30 days",
+      "niche": "E-Commerce Platforms"
+    },
+    "wix_ecommerce": {
+      "id": "wix_ecommerce",
+      "name": "Wix",
+      "program": "Wix Affiliates",
+      "commission": "Up to $100 per referred subscription",
+      "cookie_window": "30 days",
+      "niche": "E-Commerce Platforms"
+    },
+    "ecwid": {
+      "id": "ecwid",
+      "name": "Ecwid (Lightspeed)",
+      "program": "Ecwid Affiliates / Lightspeed",
+      "commission": "20-30% recurring on referred plan value",
+      "cookie_window": "90 days",
+      "niche": "E-Commerce Platforms"
+    },
+    "sellfy": {
+      "id": "sellfy",
+      "name": "Sellfy",
+      "program": "Sellfy Affiliates (FirstPromoter)",
+      "commission": "30% recurring lifetime",
+      "cookie_window": "90 days",
+      "niche": "E-Commerce Platforms"
     }
   }
 }

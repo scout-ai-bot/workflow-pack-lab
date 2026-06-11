@@ -3,8 +3,10 @@ kinsta,Kinsta,Kinsta Affiliates,$100-$500+/sale (scales with plan),30 days,Web H
 wpengine,WP Engine,WP Engine Affiliate Program,$200/sale flat fee,90 days,Web Hosting
 dreamhost,DreamHost,DreamHost Affiliates,Up to $200/sale,90 days,Web Hosting
 a2hosting,A2 Hosting,A2 Hosting Affiliates,Up to $150/sale,90 days,Web Hosting
+bigcommerce,BigCommerce,BigCommerce Affiliates (Impact),75% first month OR $150 flat per referral + 10% recurring,30 days,E-Commerce Platforms
 cloudways,Cloudways,Cloudways Affiliates,Up to $125/sale + $10/sub-affiliate,60 days,Web Hosting
 siteground,SiteGround,SiteGround Affiliates,~$100/sale,60 days,Web Hosting
+wix_ecommerce,Wix,Wix Affiliates,Up to $100 per referred subscription,30 days,E-Commerce Platforms
 bluehost,Bluehost,Bluehost Affiliates,$65+/sale,30 days,Web Hosting
 hostinger,Hostinger,Hostinger affiliates,60%/sale noted in source page,120 days noted in source page,General
 nordvpn,NordVPN,Impact / Nord Security partner program,Up to 100% on 1-MONTH plan signups only; 40% on 1-year/2-year plans; 30% on renewals. Do NOT cite as blanket 100%/sale. Verify exact tier in Jeff's dashboard.,30 days,General
@@ -17,6 +19,9 @@ tally,Tally.so,Tally Affiliates (Rewardful),30% recurring,unknown,Form Builders
 relayapp,Relay.app,Relay Affiliates (Rewardful),"30% recurring, 60-day cookie",60 days,API Automation
 n8n,n8n,n8n Affiliates (FirstPromoter),"30% recurring, 90-day cookie",90 days,API Automation
 activepieces,Activepieces,Activepieces Affiliates,30% recurring,unknown,API Automation
+squarespace,Squarespace,Squarespace Affiliates (Impact),30% recurring for first 12 months of referred plan,30 days,E-Commerce Platforms
+ecwid,Ecwid (Lightspeed),Ecwid Affiliates / Lightspeed,20-30% recurring on referred plan value,90 days,E-Commerce Platforms
+sellfy,Sellfy,Sellfy Affiliates (FirstPromoter),30% recurring lifetime,90 days,E-Commerce Platforms
 canva,Canva,Canva Affiliates (Impact),30% recurring on Pro ($13/mo),30 days,AI Image Generation
 pipedrive,Pipedrive,Pipedrive Partner Program,20% recurring + 4 months enterprise bonus,90 days,CRM/Sales
 freshsales,Freshsales,Freshworks Affiliates,20% recurring 12mo,30 days,CRM/Sales
@@ -30,3 +35,4 @@ writesonic,Writesonic,Impact/direct,25-30% lifetime recurring noted in source pa
 surferseo,Surfer SEO,Surfer SEO affiliates,30% lifetime recurring noted in source page,unknown,General
 close,Close,Close Affiliate Program,30% lifetime recurring,60 days,CRM/Sales
 copper,Copper,Copper Affiliates,20% lifetime recurring,60 days,CRM/Sales
+shopify,Shopify,Shopify Affiliates,Subscription referral — exact rates vary. Verify in partner dashboard.,30 days,E-Commerce Platforms

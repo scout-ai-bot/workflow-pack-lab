@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Revenue Analytics Dashboard — Workflow Pack Lab</title>
+<link rel="canonical" href="https://scout-ai-bot.github.io/workflow-pack-lab/dashboard/revenue-dashboard.html">
+<meta name="robots" content="noindex, nofollow">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js"></script>
+<style>
+  :root {
+    --bg: #0f1117;
+    --card: #1a1d2e;
+    --border: #2a2d3e;
+    --text: #e4e6ef;
+    --muted: #8888a0;
+    --green: #22c55e;
+    --red: #ef4444;
+    --blue: #3b82f6;
+    --amber: #f59e0b;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--bg); color: var(--text); padding: 20px; }
+  h1 { font-size: 1.8rem; margin-bottom: 4px; }
+  h2 { font-size: 1.2rem; margin: 24px 0 12px; color: var(--muted); }
+  .subtitle { color: var(--muted); font-size: 0.9rem; margin-bottom: 20px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin-bottom: 24px; }
+  .card { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 16px; }
+  .card .label { font-size: 0.8rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; }
+  .card .value { font-size: 1.8rem; font-weight: 700; margin-top: 4px; }
+  .card .delta { font-size: 0.8rem; margin-top: 2px; }
+  .positive { color: var(--green); }
+  .negative { color: var(--red); }
+  .neutral { color: var(--amber); }
+  .chart-container { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 16px; margin-bottom: 16px; }
+  .chart-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+  th, td { padding: 8px 12px; text-align: left; border-bottom: 1px solid var(--border); }
+  th { color: var(--muted); font-weight: 600; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.5px; }
+  td { color: var(--text); }
+  .status-ok { color: var(--green); }
+  .status-warn { color: var(--amber); }
+  .status-fail { color: var(--red); }
+  .placeholder { opacity: 0.4; font-style: italic; }
+  .alert { background: #1e293b; border: 1px solid #334155; border-radius: 8px; padding: 12px 16px; margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+  .alert-icon { font-size: 1.2rem; }
+  @media (max-width: 768px) { .chart-row { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<h1>📊 Revenue Analytics Dashboard</h1>
+<p class="subtitle">Generated: 2026-06-10 18:43 UTC | Site: <a href="https://scout-ai-bot.github.io/workflow-pack-lab" style="color: var(--blue);">https://scout-ai-bot.github.io/workflow-pack-lab</a></p>
+
+<!-- Summary Cards -->
+<div class="grid">
+  <div class="card">
+    <div class="label">Total Visits (All Time)</div>
+    <div class="value" id="total-visits">0</div>
+    <div class="delta neutral">Last 7 days: 0</div>
+  </div>
+  <div class="card">
+    <div class="label">Gumroad Visits</div>
+    <div class="value" id="gumroad-visits">0</div>
+    <div class="delta neutral">From site cross-links</div>
+  </div>
+  <div class="card">
+    <div class="label">Gumroad Sales</div>
+    <div class="value" id="gumroad-sales">0</div>
+    <div class="delta">Revenue: <strong>$0.00</strong></div>
+  </div>
+  <div class="card">
+    <div class="label">Conversion Rate</div>
+    <div class="value" id="conversion-rate">0.0%</div>
+    <div class="delta">No traffic yet — distribution needed</div>
+  </div>
+  <div class="card">
+    <div class="label">Affiliate Revenue</div>
+    <div class="value" id="affiliate-revenue">$0.00</div>
+    <div class="delta">Estimated (from live slugs)</div>
+  </div>
+  <div class="card">
+    <div class="label">Assets Live</div>
+    <div class="value">35</div>
+    <div class="delta">0 with traffic data</div>
+  </div>
+</div>
+
+<!-- Traffic Source Breakdown -->
+<div class="chart-container">
+  <h2>🌐 Traffic Sources (30-Day)</h2>
+  <div class="chart-row">
+    <div><canvas id="trafficChart" height="200"></canvas></div>
+    <div><canvas id="trendChart" height="200"></canvas></div>
+  </div>
+</div>
+
+<!-- Revenue Trajectory -->
+<div class="chart-container">
+  <h2>💰 Revenue Trajectory</h2>
+  <div class="chart-row">
+    <div><canvas id="revenueChart" height="200"></canvas></div>
+    <div style="display:flex;flex-direction:column;justify-content:center;">
+      <table>
+        <tr><th>Channel</th><th>30d Est.</th><th>Status</th></tr>
+        <tr><td>Gumroad (digital products)</td><td>$0</td><td class="neutral">No traffic yet</td></tr>
+        <tr><td>beehiiv affiliate (50% 12mo)</td><td>$0</td><td class="neutral">Slug live — no traffic yet</td></tr>
+        <tr><td>NordVPN affiliate (40-100%)</td><td>$0</td><td class="neutral">Enrolled — slug not swapped</td></tr>
+        <tr><td>Web hosting affiliates</td><td>$0</td><td class="neutral">Not enrolled</td></tr>
+        <tr><td>Analytics tool affiliates</td><td>$0</td><td class="neutral">Not enrolled</td></tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- System Health -->
+<div class="chart-container">
+  <h2>⚙️ System Health</h2>
+  <table>
+    <tr><th>System</th><th>Status</th><th>Detail</th></tr>
+    <tr><td>Site availability</td><td class="status-ok">✅ OK</td><td>HTTP 200 — 30+ pages live</td></tr>
+    <tr><td>Gumroad store</td><td class="status-ok">✅ LIVE</td><td>2 products published ($19 + $29), 0 sales</td></tr>
+    <tr><td>Search Console</td><td class="status-ok">✅ OK</td><td>Property verified, sitemap submitted</td></tr>
+    <tr><td>Distribution accounts</td><td class="status-fail">❌ Blocked</td><td>No accounts — system 25 prep pack ready for Jeff</td></tr>
+    <tr><td>Affiliate slugs</td><td class="status-warn">⚠️ Pending</td><td>Placeholder slugs — swap after Jeff provides IDs</td></tr>
+    <tr><td>SEO quality</td><td class="status-ok">✅ OK</td><td>Avg 87% score, 0 failures (scan 2026-06-10)</td></tr>
+  </table>
+</div>
+
+<!-- Top Assets -->
+<div class="chart-container">
+  <h2>📄 Top Assets by Traffic Potential</h2>
+  <table>
+    <tr><th>Asset</th><th>Path</th><th>Traffic Potential</th><th>Commission</th><th>Revenue Ready</th></tr>
+    <tr><td>Web Hosting Comparison</td><td><a href="https://scout-ai-bot.github.io/workflow-pack-lab/web-hosting/" style="color:var(--blue)">web-hosting/</a></td><td>Very High</td><td>$200/sale WP Engine, $500+ Kinsta</td><td class="status-warn">Needs enrollment</td></tr>
+    <tr><td>E-Commerce Platforms</td><td><a href="https://scout-ai-bot.github.io/workflow-pack-lab/ecommerce-platforms/" style="color:var(--blue)">ecommerce-platforms/</a></td><td>Very High</td><td>$150 BigCommerce, 30% recurring</td><td class="status-warn">Needs enrollment</td></tr>
+    <tr><td>Website Cost Calculator</td><td><a href="https://scout-ai-bot.github.io/workflow-pack-lab/tools/website-cost-calculator/" style="color:var(--blue)">tools/website-cost-calculator/</a></td><td>Very High</td><td>Webflow/Squarespace/Wix affiliates</td><td class="status-warn">Needs enrollment</td></tr>
+    <tr><td>Analytics & Tracking Tools</td><td><a href="https://scout-ai-bot.github.io/workflow-pack-lab/analytics-tools/" style="color:var(--blue)">analytics-tools/</a></td><td>Very High</td><td>30% recurring Plausible/Fathom</td><td class="status-warn">Needs enrollment</td></tr>
+    <tr><td>VPN & Security Tools</td><td><a href="https://scout-ai-bot.github.io/workflow-pack-lab/vpn-security-tools/" style="color:var(--blue)">vpn-security-tools/</a></td><td>High</td><td>NordVPN 40-100%, Surfshark</td><td class="status-fail">Need slug swap</td></tr>
+    <tr><td>AI Code Assistants</td><td><a href="https://scout-ai-bot.github.io/workflow-pack-lab/ai-code-assistants/" style="color:var(--blue)">ai-code-assistants/</a></td><td>High</td><td>Referral credits only (no cash)</td><td class="status-fail">Limited</td></tr>
+    <tr><td>Newsletter Platforms</td><td><a href="https://scout-ai-bot.github.io/workflow-pack-lab/newsletter-platforms/" style="color:var(--blue)">newsletter-platforms/</a></td><td>High</td><td>beehiwi 50% 12mo (LIVE)</td><td class="status-ok">✅ LIVE slug</td></tr>
+  </table>
+</div>
+
+<!-- Alerts & Next Steps -->
+<div class="alert"><span class="alert-icon">🚨</span><div><strong>Critical: No distribution accounts exist.</strong> 58 assets, 0 traffic. Create dev.to/Medium/IH accounts under "Workflow Pack Lab" brand. <a href="../../systems/distribution-account-pack/account-checklist.md" style="color:var(--blue)">Checklist here</a>.</div></div>
+<div class="alert"><span class="alert-icon">⚠️</span><div><strong>Placeholder slugs active</strong> — replace with Jeff's real tracking IDs in <code>systems/affiliate-slugs.json</code>, then run <code>python systems/affiliate_slug_swapper.py --apply</code>.</div></div>
+
+<script>
+// Traffic sources data
+const trafficCtx = document.getElementById('trafficChart').getContext('2d');
+new Chart(trafficCtx, {
+  type: 'doughnut',
+  data: {
+    labels: ['Organic (0)', 'dev.to (0)', 'Medium (0)', 'Indie Hackers (0)', 'Direct (0)'],
+    datasets: [{
+      data: [0, 0, 0, 0, 1],
+      backgroundColor: ['#3b82f6', '#22c55e', '#f59e0b', '#ef4444', '#8888a0'],
+      borderWidth: 0
+    }]
+  },
+  options: {
+    responsive: true,
+    plugins: { legend: { position: 'bottom', labels: { color: '#8888a0' } } }
+  }
+});
+
+// Trend chart (last 7 days — no data yet)
+const trendCtx = document.getElementById('trendChart').getContext('2d');
+new Chart(trendCtx, {
+  type: 'line',
+  data: {
+    labels: ['Day 1', 'Day 2', 'Day 3', 'Day 4', 'Day 5', 'Day 6', 'Today'],
+    datasets: [{
+      label: 'Daily Visits',
+      data: [0, 0, 0, 0, 0, 0, 0],
+      borderColor: '#3b82f6',
+      backgroundColor: 'rgba(59, 130, 246, 0.1)',
+      fill: true,
+      tension: 0.3
+    }]
+  },
+  options: {
+    responsive: true,
+    plugins: { legend: { display: false } },
+    scales: { y: { beginAtZero: true, ticks: { color: '#8888a0' } }, x: { ticks: { color: '#8888a0' } } }
+  }
+});
+
+// Revenue trajectory chart
+const revCtx = document.getElementById('revenueChart').getContext('2d');
+new Chart(revCtx, {
+  type: 'bar',
+  data: {
+    labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
+    datasets: [{
+      label: 'Projected Revenue',
+      data: [0, 0, 29, 58],
+      backgroundColor: 'rgba(34, 197, 94, 0.5)',
+      borderColor: '#22c55e',
+      borderWidth: 1
+    }]
+  },
+  options: {
+    responsive: true,
+    plugins: { legend: { display: false } },
+    scales: { y: { beginAtZero: true, ticks: { color: '#8888a0', callback: v => '$' + v } }, x: { ticks: { color: '#8888a0' } } }
+  }
+});
+</script>
+</body>
+</html>
