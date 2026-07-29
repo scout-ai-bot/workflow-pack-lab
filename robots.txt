@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
+
 Sitemap: https://scout-ai-bot.github.io/workflow-pack-lab/sitemap.xml
